@@ -1,17 +1,17 @@
 Readme.md
 
-##DevOps Projekt für Methoden und Werkzeuge 
+##  DevOps Projekt für Methoden und Werkzeuge 
 
--Gruppenname: Team Star
+-  Gruppenname: Team Star
 
--Developer: Mark-Viktor Voth, Raphael Storch
+-  Developer: Mark-Viktor Voth, Raphael Storch
 
 
-##Update News 
+##  Update News 
 
--angelegt Eclipse Workspace
+-  angelegt Eclipse Workspace
 
--angelegt Logik Package 
+-  angelegt Logik Package 
 
--angelegt Kreuzwortraetzel.java 
+-  angelegt Kreuzwortraetzel.java 
 
