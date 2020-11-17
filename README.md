@@ -1,15 +1,21 @@
-Readme.md
-
 ##DevOps Projekt für Methoden und Werkzeuge 
 
 -Gruppenname: Team Star
 
--Developer: Mark-Viktor Voth, Raphael Storch
+-Developer: Mark-Viktor Voth, Raphael Storch, Gufran Özmert
 
 
-##Update News 
+##Update 17-11-2020
 
--angelegt Eclipse Workspace
--angelegt Logik Package 
--angelegt Kreuzwortraetzel.java 
+-  Trello installiert 
+-  Trello-Board erstellt 
+-  grobe Tasks besprochen 
+
+##Update Pre-Starting  
+
+-  Wöchentliches Treffen festgelegt 
+-  Team vollständig 
+-  angelegt Eclipse Workspace
+-  angelegt Logik Package 
+-  angelegt Kreuzwortraetzel.java 
 
