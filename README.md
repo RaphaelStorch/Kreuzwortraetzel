@@ -1,8 +1,9 @@
-##DevOps Projekt für Methoden und Werkzeuge 
 
--Gruppenname: Team Star
+##DevOps Projekt fï¿½r Methoden und Werkzeuge 
 
--Developer: Mark-Viktor Voth, Raphael Storch, Gufran Özmert
+-  Gruppenname: Team Star
+
+-  Developer: Mark-Viktor Voth, Raphael Storch, Gufran ï¿½zmert
 
 
 ##Update 17-11-2020
@@ -13,8 +14,8 @@
 
 ##Update Pre-Starting  
 
--  Wöchentliches Treffen festgelegt 
--  Team vollständig 
+-  Wï¿½chentliches Treffen festgelegt 
+-  Team vollstï¿½ndig 
 -  angelegt Eclipse Workspace
 -  angelegt Logik Package 
 -  angelegt Kreuzwortraetzel.java 
