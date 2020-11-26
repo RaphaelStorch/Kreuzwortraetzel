@@ -8,6 +8,12 @@
 -  Developer: Mark-Viktor Voth, Raphael Storch, Gufran Oezmert
 
 
+## Update 24-11-2020
+
+-  Brainstroming für Nice to Have 
+-  Brainstorming für Must haves 
+-  Grobes aufteilen der Rollen  
+
 ## Update 17-11-2020
 
 -  Trello installiert 
