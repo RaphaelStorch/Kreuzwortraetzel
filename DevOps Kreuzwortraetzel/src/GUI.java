@@ -85,6 +85,7 @@ public class GUI extends JFrame {
     cp.add(jTextField4);
     // Ende Komponenten
     
+    cp.setBackground(Color.CYAN);
     setVisible(true);
   } // end of public GUI
   
