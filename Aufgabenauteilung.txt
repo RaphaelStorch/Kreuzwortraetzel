@@ -1,0 +1,13 @@
+Gufran 
+-Product Owner Aufgaben checken 
+-Sounds class 
+-Bilder ideen vorbereiten
+
+Mark 
+-Wörter sammeln/Fragen -> Excel füllen (max. 10 Buchstaben)
+-Optional Excel auslesen 
+-Scrum Master anschauen 
+
+Raphael 
+-Logik / GUI ordentlich machen 
+-Alles andere 
