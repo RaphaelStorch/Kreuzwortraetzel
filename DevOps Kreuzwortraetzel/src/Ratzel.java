@@ -16,7 +16,10 @@ public class Ratzel extends JFrame {
   // Ende Attribute
   
   public Ratzel() { 
+	  //
     // Frame-Initialisierung
+	  //wie gehts 
+	  //Was los 
     super();
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     int frameWidth = 300;
