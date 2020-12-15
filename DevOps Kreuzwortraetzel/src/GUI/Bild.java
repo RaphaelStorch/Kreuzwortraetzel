@@ -24,6 +24,7 @@ public class Bild extends JFrame {
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
+			////Hall Wie gehts sasd 
 				}
 			}
 		});
