@@ -135,27 +135,33 @@ public class Main {
 			}
 		
 		
-		Attempt.btn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JLabel[][] l = frame.jl;
-				for(int i=0; i<10; i++) {
-					for(int j=0; j<10; j++) {
-						String zw="S";
-						if(t[i][j].getText().equals(zw)) {
-							l[i][j].setText(zw);
-							t[i][j].setText("LEER");
-							t[i][j].setBounds(1000, 1000, width, height);;
-							frame.contentPane.remove(t[i][j]);
-							l[i][j].setBackground(Color.GREEN);
-							frame.contentPane.add(l[i][j]);
+		Attempt.btn.addActionListener(aL(frame, width, height, t));}
+		
+		
+		public static ActionListener aL(Attempt frame, int width, int height, JTextField[][] t) {
+			
+			return new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					JLabel[][] l = frame.jl;
+					for(int i=0; i<10; i++) {
+						for(int j=0; j<10; j++) {
+							String zw="S";
+							if(t[i][j].getText().equals(zw)) {
+								l[i][j].setText(zw);
+								t[i][j].setText("LEER");
+								t[i][j].setBounds(1000, 1000, width, height);;
+								frame.contentPane.remove(t[i][j]);
+								l[i][j].setBackground(Color.GREEN);
+								frame.contentPane.add(l[i][j]);
+							}
 						}
 					}
+					
+					String s = t[0][0].getText(); 
+					System.out.println(s);
 				}
-				
-				String s = t[0][0].getText(); 
-				System.out.println(s);
-			}
-		});
+			};}
+		
 //	static String Antwort=""; 
 //	static int zeile=0; 
 //	static int spalte=0; 
@@ -175,5 +181,5 @@ public class Main {
 ////	}
 //		System.out.println("die Eingabe war: " + zeile+ " "+ spalte + " " + Antwort);
 //	}
-	}
+	
 }
