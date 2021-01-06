@@ -61,7 +61,7 @@ public class Main {
 	}
 	
 	static void deklaration() {
-		String[] lö = new String[10];  
+		String[] lö= new String[10];  
 		lö[0]="Vim".toUpperCase();
 		lö[1]="Repository".toUpperCase();
 		lö[2]="Merge".toUpperCase();
