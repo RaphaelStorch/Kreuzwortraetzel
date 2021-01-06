@@ -49,7 +49,6 @@ public class FragenAnzeiger {
 
 	static String[][] Fragen = getCSVFragen();
 	public static FocusAdapter fragenMittel(int o) {
-		
 		System.out.println("Reached");
 		FocusAdapter[] fa = new FocusAdapter[21]; 
 		int derzeit = o; 
@@ -89,8 +88,6 @@ public class FragenAnzeiger {
 					Mittel.fragefeld.setText(F1);
 					for(int i = 7; i<=47; i=i+10)Mittel.tf[i/10][7-1].setBackground(Color.yellow);
 				}
-				
-				sysout
 				@Override
 				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");
 				for(int i = 7; i<=47; i=i+10)Mittel.tf[i/10][7-1].setBackground(Color.white);
