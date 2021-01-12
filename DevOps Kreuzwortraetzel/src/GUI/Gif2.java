@@ -41,7 +41,7 @@ public class Gif2 extends JFrame {
 		setContentPane(contentPane);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Raphael\\Desktop\\tenor (1).gif"));
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Raphael\\Desktop\\Hintergrund.gif"));
 		contentPane.add(lblNewLabel, BorderLayout.CENTER);
 	}
 

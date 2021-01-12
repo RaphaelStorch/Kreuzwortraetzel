@@ -46,7 +46,7 @@ public class Gif extends JFrame {
 		setContentPane(contentPane);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Raphael\\Desktop\\tenor.gif"));
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Raphael\\Desktop\\Sonstiges\\6155be22acb314cdd62940f61a75e9e2.jpg"));
 		contentPane.add(lblNewLabel, BorderLayout.CENTER);
 		
 		JButton btnNewButton = new JButton("New button");
