@@ -38,19 +38,19 @@ public class CheckAntwort {
 			}
 		};}
 	
-	CheckAntwort(String[][][] eingabe){
-	
-	for(int i=0; i<10; i++) {
-		for(int j=0; j<10; j++) {
-			String zw="S";
-			if(tf[i][j].getText().equals(zw)) {
-				jl[i][j].setText(zw);
-				tf[i][j].setText("LEER");
-				tf[i][j].setBounds(1000, 1000, width, height);;
-				contentPane.remove(tf[i][j]);
-				jl[i][j].setBackground(Color.GREEN);
-				contentPane.add(jl[i][j]);
-			}
-		}
-	}}
+//	CheckAntwort(String[][][] eingabe){
+//	
+//	for(int i=0; i<10; i++) {
+//		for(int j=0; j<10; j++) {
+//			String zw="S";
+//			if(tf[i][j].getText().equals(zw)) {
+//				jl[i][j].setText(zw);
+//				tf[i][j].setText("LEER");
+//				tf[i][j].setBounds(1000, 1000, width, height);;
+//				contentPane.remove(tf[i][j]);
+//				jl[i][j].setBackground(Color.GREEN);
+//				contentPane.add(jl[i][j]);
+//			}
+//		}
+//	}}
 }

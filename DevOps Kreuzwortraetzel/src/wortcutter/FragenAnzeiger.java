@@ -46,6 +46,19 @@ public class FragenAnzeiger {
 
 		return fragen;		
 	}
+	
+	public static void backgroundmarkerhorizontal(int zahl, int laenge) {
+		
+	}
+	public static void backgroundmarkervertical(int zahl, int spalte, Object object, int p) {
+//		for(int i = spalte; i<=zahl; i=i+10)Mittel.tf[i/10][spalte-1].setBackground(Color.yellow);
+		for(int i = 0; i<=fragen[p][0].length(); i++)Mittel.tf[fragen[p][0].length()][153%10+i].setBackground(Color.yellow);
+
+		for(int i=0; i<21; i++) {
+			for(int j=0; j<20; j++) {
+		if(object.equals(Mittel.tf[i][j]))Mittel.tf[i][j].setBackground(Color.yellow);}}
+	}
+	
 
 	static String[][] Fragen = getCSVFragen();
 	public static FocusAdapter fragenMittel(int o) {
@@ -78,6 +91,7 @@ public class FragenAnzeiger {
 		final String F21 = fragen[21][0];
 
 		JTextField[][] tfcopy = Mittel.tf;
+		Color[] zwcolor = new Color[30]; 
 
 		//Verschmelzung von zwei Dateien,"Merge" (o>=3&&o<=9)
 		if(o == 7 || o == 17 || o == 27 || o == 37 || o == 47){
@@ -86,11 +100,13 @@ public class FragenAnzeiger {
 				public void focusGained(FocusEvent e) {
 					System.out.println(F1);
 					Mittel.fragefeld.setText(F1);
-					for(int i = 7; i<=47; i=i+10)Mittel.tf[i/10][7-1].setBackground(Color.yellow);
+					//for(int i = 7; i<=47; i=i+10)Mittel.tf[i/10][7-1].setBackground(Color.yellow);
+					
+
 				}
 				@Override
 				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");
-				for(int i = 7; i<=47; i=i+10)Mittel.tf[i/10][7-1].setBackground(Color.white);
+				//for(int i = 7; i<=47; i=i+10)Mittel.tf[i/10][7-1].setBackground(Color.white);
 				}};
 				return fa[1];}
 		//Wenn man ein neues Verzeichnis in git haben möchte,"mkdir"
@@ -110,7 +126,8 @@ public class FragenAnzeiger {
 		if(o>=203&&o<=206) {
 			fa[3]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F3);}
+				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F3);
+				for(int i = 0; i<=4; i++)Mittel.tf[203/10-1][203%10+i].setBackground(Color.yellow);}
 				@Override
 				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
 				return fa[3];}
@@ -119,11 +136,16 @@ public class FragenAnzeiger {
 			fa[4]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F4);
-				for(int i = 0; i<6; i++)Mittel.tf[4/10][4%10+i-1].setBackground(Color.yellow);
+				
+				for(int i = 0; i<6; i++) {
+					zwcolor[i] = Mittel.tf[4/10][4%10+i-1].getBackground();
+					Mittel.tf[4/10][4%10+i-1].setBackground(Color.yellow);
+				}
 				}
 				@Override
 				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");
-				for(int i = 0; i<6; i++)Mittel.tf[4/10][4%10+i-1].setBackground(Color.white);
+				for(int i = 0; i<6; i++) {Mittel.tf[4/10][4%10+i-1].setBackground(zwcolor[i]);
+				}
 				}};
 				return fa[4];}
 		//Frueherer in Git: "Master",Main"
@@ -139,7 +161,13 @@ public class FragenAnzeiger {
 				|| o == 90 +14 || o==100+14 || o == 110 +14 || o==120+14 || o==130+14 ) {
 			fa[6]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F6);}
+				public void focusGained(FocusEvent e) {
+					Mittel.fragefeld.setText(F6);
+						}
+					
+					
+//				backgroundmarkervertical(o, 14, e.getComponent());
+				
 				@Override
 				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
 				return fa[6];}
