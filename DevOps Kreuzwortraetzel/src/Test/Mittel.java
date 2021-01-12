@@ -2,11 +2,16 @@ package Test;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+<<<<<<< HEAD
 import java.awt.Component;
 import java.awt.ContainerOrderFocusTraversalPolicy;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.TextField;
+=======
+import java.awt.EventQueue;
+import java.awt.Font;
+>>>>>>> main
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,17 +21,26 @@ import java.awt.event.FocusListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+<<<<<<< HEAD
 import javax.swing.AbstractButton;
+=======
+>>>>>>> main
 import javax.swing.GroupLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+<<<<<<< HEAD
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import javax.swing.SwingUtilities;
+=======
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
+>>>>>>> main
 import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 import javax.swing.GroupLayout.Alignment;
@@ -34,6 +48,7 @@ import javax.swing.border.EmptyBorder;
 
 import wortcutter.Boi;
 import wortcutter.FragenAnzeiger;
+<<<<<<< HEAD
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
@@ -51,6 +66,8 @@ import javax.swing.plaf.ColorUIResource;
 import javax.swing.plaf.metal.DefaultMetalTheme;
 import javax.swing.plaf.metal.MetalLookAndFeel;
 
+=======
+>>>>>>> main
 
 public class Mittel extends JFrame {
 
@@ -75,8 +92,13 @@ public class Mittel extends JFrame {
 	public static JButton btn = new JButton("Testen");
 	public static JTextField[][] tf = new JTextField[21][21];
 	//tf = Textfieldgenerator.getTextfields; 
+<<<<<<< HEAD
 	//public static JLabel[][] jl = new JLabel[20][20];
 	public final static int width=32; 
+=======
+	public static JLabel[][] jl = new JLabel[20][20];
+	public final static int width=28; 
+>>>>>>> main
 	public final static int height=30; 
 	public final static int x = 50; 
 	public final static int y = 80; 
@@ -88,6 +110,7 @@ public class Mittel extends JFrame {
 	static JTextPane textPane = new JTextPane();
 	static JPanel panel = new JPanel();
 	static JLabel lblNewLabel = new JLabel("HintergrundMittel");
+<<<<<<< HEAD
 	static JLabel lblNewLabel_1 = new JLabel("motivation");
 	static int l = 0; 
 	static int p = 0;
@@ -97,10 +120,16 @@ public class Mittel extends JFrame {
 	static JScrollPane scrollPane = new JScrollPane(textPane,  
 			JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
 	        JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+=======
+	static int l = 0; 
+	static int p = 0;
+	static int Punktestand =0; 
+>>>>>>> main
 	/**
 	 * Create the frame.
 	 */
 	public Mittel() {
+<<<<<<< HEAD
 		
 
 		  MetalLookAndFeel.setCurrentTheme(new MyDefaultMetalTheme());
@@ -248,10 +277,109 @@ static int konsolenzähler=0;
 			public void actionPerformed(ActionEvent e) {
 				konsolenzähler++;
 				Punktestand=0;
+=======
+		System.out.println("Starte auf Mittel");
+		Frameassistent.font();
+	//	Standards();
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(50, 50, 900, 750);
+		setTitle("DevOps Kreuzworträtzel");
+		setIconImage(Toolkit.getDefaultToolkit().getImage("..\\DevOps Kreuzwortraetzel\\Bilder\\hicon.jpg"));
+		
+		
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel_1 = new JLabel("motivation");
+		lblNewLabel_1.setIcon(new ImageIcon("..\\DevOps Kreuzwortraetzel\\Bilder\\motivation.gif"));
+		lblNewLabel_1.setLabelFor(lblNewLabel_1);
+		lblNewLabel_1.setBounds(628, 404, 168, 134);
+		contentPane.add(lblNewLabel_1);
+		mainTextPanes();
+		mainButton();
+		mainfrageFeld();		
+		mainPanel();
+		testFeld();
+		
+		
+		
+		lblNewLabel.setIcon(new ImageIcon("..\\DevOps Kreuzwortraetzel\\Bilder\\hintergrund2.gif"));
+		lblNewLabel.setBounds(0, 0, 886, 713);
+		contentPane.add(lblNewLabel);
+		
+		for(int i=0; i<21; i++) {
+			for(int j=0; j<20; j++) {
+		tf[i][j]= new JTextField();
+		tf[i][j].setBounds(0+j*width, 0+i*height, width, height);
+		panel.add(tf[i][j]);
+		tf[i][j].setText(" ");
+		if(aw[i][j].equals(" "))tf[i][j].setBackground(Color.green);
+		tf[i][j].setColumns(10);
+		if(!(aw[i][j].equals(" "))) {
+			System.out.println("Reached");
+			tf[i][j].addFocusListener(FragenAnzeiger.fragenMittel(i*10+j+1));
+			System.out.println("Reached2");
+		}
+		
+			}
+			}
+//		for(int i=0; i<20; i++) {
+//			for(int j=0; j<20; j++) {
+//		jl[i][j]= new JLabel();
+//		jl[i][j].setBounds(x+i*width, y+j*height, width, height);
+//		
+//		
+//			}
+//		}
+	}
+
+	void Standards() {
+		
+	}
+	void mainTextPanes() {
+		textPane.setBounds(630, 62, 139, 248);
+		contentPane.add(textPane);
+		
+	}
+	
+	void mainButton() {
+		btn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+//				konsole = "";
+//				for(int i=0; i<21; i++) {
+//					for(int j=0; j<20; j++) {
+//						eg[i][j]=tf[i][j].getText();
+//						if(eg[i][j].equals(" "+ aw[i][j])) {
+//							konsole = konsole+"\n"+i+" "+j+" Richtig";
+//							tf[i][j].setText(""+eg[i][j]);
+//							tf[i][j].setBackground(Color.green);
+//							Punktestand = Punktestand + 5;
+//							
+//							
+//							//wenn man mal durchgekommen ist 
+//
+//							if(Punktestand >100) {
+//								fragefeld.setText("GESCHAFT");
+//								lblNewLabel.setIcon(new ImageIcon("..\\DevOps Kreuzwortraetzel\\Bilder\\Geschaft.jpg"));
+//								panel.setVisible(false);
+//							
+//							
+//						}else if(!(eg[i][j].equals(" ") )){
+//							konsole = konsole+"\n"+i+" "+j+" Falsch";
+//							tf[i][j].setText(""+eg[i][j]);
+//							tf[i][j].setBackground(Color.red);
+//							}
+//						}	
+//						}
+//					}
+>>>>>>> main
 				for(int i=0; i<21; i++) {
 					for(int j=0; j<20; j++) {
 						eg[i][j]=tf[i][j].getText();
 						if(eg[i][j].equals(" "+ aw[i][j])) {
+<<<<<<< HEAD
 							if(j==0)konsole = konsole + "\n---Ausgabe Nr." +konsolenzähler + "---" + "\n";
 							konsole = konsole+"\n"+i+" "+j+" Richtig,  +1 ";
 							tf[i][j].setText(""+eg[i][j]);
@@ -355,10 +483,46 @@ static int konsolenzähler=0;
 	void mainfrageFeld() {
 		fragefeld = new JTextField();
 		fragefeld.setBounds(31, 20, 561, 45);
+=======
+							konsole = konsole+"\n"+i+" "+j+" Richtig, 5 Punkte";
+							tf[i][j].setText(""+eg[i][j]);
+							tf[i][j].setBackground(Color.green);
+							
+							Punktestand = Punktestand + 5;
+							
+//							
+//							
+//							//wenn man mal durchgekommen ist 
+
+							if(Punktestand >100) {
+								fragefeld.setText("GESCHAFT, DU HAST DIE VOLLE PUNKTZAHL");
+								lblNewLabel.setIcon(new ImageIcon("..\\DevOps Kreuzwortraetzel\\Bilder\\Geschaft2.jpg"));
+								panel.setVisible(false);}
+						}else if(!(eg[i][j].equals(" ") )){
+							konsole = konsole+"\n"+i+" "+j+" Falsch";
+							//tf[i][j].setText(""+eg[i][j]);
+							tf[i][j].setBackground(Color.red);
+						}	else {}
+						}
+					}
+				textPane.setText(konsole + "\nPunktestand: " + Punktestand);
+				}
+			});
+		btn.setBounds(630, 600, 85, 30);
+		Font ButtonFond= new Font ("Arial", Font.BOLD, 14);
+		btn.setFont(ButtonFond);
+		contentPane.add(btn);
+	}
+	
+	void mainfrageFeld() {
+		fragefeld = new JTextField();
+		fragefeld.setBounds(31, 20, 561, 30);
+>>>>>>> main
 		Font f = new Font ("Comic Sans", Font.BOLD, 16);
 		fragefeld.setFont(f);
 		contentPane.add(fragefeld);
 		fragefeld.setColumns(10);
+<<<<<<< HEAD
 		fragefeld.setBackground(Color.black);
 		fragefeld.setForeground(Color.green);
 		fragefeld.setEditable(false);
@@ -415,18 +579,43 @@ static int complete;
 				textField_2.setBackground(Color.white);
 			}
 		});
+=======
+	}
+	
+	void mainPanel() {
+
+		panel.setBounds(31, 69, 561, 634);
+		contentPane.add(panel);
+		GroupLayout gl_panel = new GroupLayout(panel);
+		gl_panel.setHorizontalGroup(
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGap(0, 561, Short.MAX_VALUE)
+		);
+		gl_panel.setVerticalGroup(
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGap(0, 604, Short.MAX_VALUE)
+		);
+		panel.setLayout(gl_panel);
+	}
+	
+	void testFeld() {
+		textField_2 = new JTextField();
+>>>>>>> main
 		textField_2.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyReleased(KeyEvent e) {
 				String s = ""+e.getKeyChar();
 				fragefeld.setText(s.toUpperCase());
 			}
+<<<<<<< HEAD
 			@Override
 			public void keyPressed(KeyEvent e) {
 			}
 			@Override
 			public void keyTyped(KeyEvent e) {
 			}
+=======
+>>>>>>> main
 		});
 		textField_2.addFocusListener(new FocusAdapter() {
 			@Override
@@ -435,6 +624,7 @@ static int complete;
 			}
 			@Override
 			public void focusLost(FocusEvent e) {
+<<<<<<< HEAD
 				textField_2.setBackground(Color.white);
 				fragefeld.setText("");
 			}
@@ -557,4 +747,15 @@ static int complete;
 //		    return new ColorUIResource(java.awt.Color.green);
 //		  }
 		}
+=======
+
+				fragefeld.setText("");
+			}
+		});
+		textField_2.setBounds(642, 347, 96, 19);
+		contentPane.add(textField_2);
+		textField_2.setColumns(10);
+		
+	}
+>>>>>>> main
 }

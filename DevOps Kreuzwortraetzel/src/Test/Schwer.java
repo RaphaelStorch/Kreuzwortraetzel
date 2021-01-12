@@ -48,10 +48,17 @@ public class Schwer extends JFrame {
 	public static JButton btn = new JButton("Testen");
 	public static JButton btn1 = new JButton("1");
 	public static JButton btn2 = new JButton("2");
+<<<<<<< HEAD
 	public static JTextField[][] tf = new JTextField[21][20];
 	//tf = Textfieldgenerator.getTextfields; 
 	public static JLabel[][] jl = new JLabel[20][20];
 	public final static int width=33; 
+=======
+	public static JTextField[][] tf = new JTextField[20][20];
+	//tf = Textfieldgenerator.getTextfields; 
+	public static JLabel[][] jl = new JLabel[20][20];
+	public final static int width=28; 
+>>>>>>> main
 	public final static int height=30; 
 	public final static int x = 50; 
 	public final static int y = 80; 
@@ -90,12 +97,20 @@ public class Schwer extends JFrame {
 		btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				konsole = "";
+<<<<<<< HEAD
 				for(int i=0; i<21; i++) {
 					for(int j=0; j<20; j++) {
 						eg[i][j]=tf[i][j].getText();
 						if(!(tf[i][j].getBackground().equals(Color.black)))tf[i][j].setText(" "+aw[i][j]);
 						if(eg[i][j].equals(" "+ aw[i][j])) {
 							
+=======
+				for(int i=0; i<20; i++) {
+					for(int j=0; j<20; j++) {
+						tf[i][j].setText(""+aw[i][j]);
+						eg[i][j]=tf[i][j].getText();
+						if(eg[i][j].equals(" "+ aw[i][j])) {
+>>>>>>> main
 							konsole = konsole+"\n"+i+" "+j+" Richtig";
 							//tf[i][j].setText(""+eg[i][j]);
 							tf[i][j].setBackground(Color.green);
@@ -129,7 +144,11 @@ public class Schwer extends JFrame {
 		fragefeld.setColumns(10);
 		
 		JPanel panel = new JPanel();
+<<<<<<< HEAD
 		panel.setBounds(10, 69, 610, 634);
+=======
+		panel.setBounds(31, 69, 561, 604);
+>>>>>>> main
 		contentPane.add(panel);
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
@@ -173,7 +192,11 @@ public class Schwer extends JFrame {
 		
 		
 		 
+<<<<<<< HEAD
 		for(int i=0; i<21; i++) {
+=======
+		for(int i=0; i<20; i++) {
+>>>>>>> main
 			for(int j=0; j<20; j++) {
 		tf[i][j]= new JTextField();
 		tf[i][j].setBounds(0+j*width, 0+i*height, width, height);
@@ -201,6 +224,7 @@ public class Schwer extends JFrame {
 		});}
 			}
 		}
+<<<<<<< HEAD
 //		for(int i=0; i<20; i++) {
 //			for(int j=0; j<20; j++) {
 //		jl[i][j]= new JLabel();
@@ -209,6 +233,16 @@ public class Schwer extends JFrame {
 //		
 //			}
 //		}
+=======
+		for(int i=0; i<20; i++) {
+			for(int j=0; j<20; j++) {
+		jl[i][j]= new JLabel();
+		jl[i][j].setBounds(x+i*width, y+j*height, width, height);
+		
+		
+			}
+		}
+>>>>>>> main
 	}
 
 }
