@@ -1,7 +1,7 @@
 
 ## DevOps Projekt fuer Methoden und Werkzeuge 
 
-![Alt-Text](https://3.bp.blogspot.com/-nbI3N4nIBOY/W2dfkZef5gI/AAAAAAAA3nU/gCd3N_yu7FQgymn57J4FmvHYgKZhwkdLwCLcBGAs/s640/ezgif.com-resize-131.gif)
+![Alt-Text](https://github.com/RaphaelStorch/Kreuzwortraetzel/blob/main/Logo.png)
 
 -  Gruppenname: Team Star
 
