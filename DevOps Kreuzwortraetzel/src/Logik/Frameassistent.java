@@ -1,4 +1,4 @@
-package Test;
+package Logik;
 
 import java.awt.Font;
 import java.awt.Toolkit;

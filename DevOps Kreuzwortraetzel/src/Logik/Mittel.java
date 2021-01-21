@@ -1,4 +1,4 @@
-package Test;
+package Logik;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -137,7 +137,7 @@ public class Mittel extends JFrame {
 		JButton Hauptmenu = new JButton("Hauptmenu");
 		Hauptmenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 Tutorial.main(null);
+//				 Tutorial.main(null);
 				setVisible(false);
 			}
 		});
