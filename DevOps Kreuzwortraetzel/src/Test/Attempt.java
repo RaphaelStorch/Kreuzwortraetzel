@@ -14,7 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import wortcutter.Boi;
+import wortcutter.Database;
 
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -59,8 +59,8 @@ public class Attempt extends JFrame {
 	public final static int x = 50; 
 	public final static int y = 80; 
 	private JTextField fragefeld;
-	public static String[][] aw = Boi.getMatrix(); 
-	public static String[][] eg = Boi.getMatrixEg(); 
+	public static String[][] aw = Database.getMatrix(); 
+	public static String[][] eg = Database.getMatrixEg(); 
 	public static String konsole =""; 
 	private JTextField textField_2;
 	static JTextPane textPane = new JTextPane();

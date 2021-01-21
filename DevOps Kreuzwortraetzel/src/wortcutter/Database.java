@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Boi {
+public class Database {
 
 	public static String[][] getMatrix() {
 		String[][] ma = {
