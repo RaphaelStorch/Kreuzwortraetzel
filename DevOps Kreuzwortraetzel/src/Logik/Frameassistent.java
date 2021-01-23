@@ -9,7 +9,7 @@ import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 
 public class Frameassistent {
-	static void font() {
+	public static void font() {
 		Font defaultfont = new Font ("Comic Sans", Font.PLAIN, 29);
 	       UIDefaults defaults = UIManager.getLookAndFeelDefaults();
 	       defaults.put("Button.font", defaultfont); 

@@ -1,4 +1,4 @@
-package Logik;
+package JFrames;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -50,6 +50,8 @@ import javax.swing.border.TitledBorder;
 import javax.swing.plaf.ColorUIResource;
 import javax.swing.plaf.metal.DefaultMetalTheme;
 import javax.swing.plaf.metal.MetalLookAndFeel;
+
+import Logik.Frameassistent;
 
 
 public class Mittel extends JFrame {

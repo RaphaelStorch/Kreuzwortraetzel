@@ -12,7 +12,7 @@ import java.io.IOException;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import Logik.Mittel;
+import JFrames.Mittel;
 
 public class FragenAnzeiger {
 

@@ -1,4 +1,4 @@
-package Logik;
+package JFrames;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -20,12 +20,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
+import javax.swing.UIDefaults;
+import javax.swing.UIManager;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.border.EmptyBorder;
 
+import Logik.Frameassistent;
 import wortcutter.Database;
 
-public class Schwer extends JFrame {
+public class Einfach extends JFrame {
 
 	private JPanel contentPane;
 
@@ -36,7 +39,7 @@ public class Schwer extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Schwer frame = new Schwer();
+					Einfach frame = new Einfach();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -62,13 +65,11 @@ public class Schwer extends JFrame {
 	private JTextField textField_2;
 	static JTextPane textPane = new JTextPane();
 	
-	
 	/**
 	 * Create the frame.
 	 */
-	public Schwer() {
-
-		System.out.println("Starte auf Schwer");
+	public Einfach() {
+		System.out.println("Starte auf Einfach");
 		Frameassistent.font();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -92,11 +93,12 @@ public class Schwer extends JFrame {
 				konsole = "";
 				for(int i=0; i<20; i++) {
 					for(int j=0; j<20; j++) {
-						tf[i][j].setText(""+aw[i][j]);
+						
 						eg[i][j]=tf[i][j].getText();
+						
 						if(eg[i][j].equals(" "+ aw[i][j])) {
 							konsole = konsole+"\n"+i+" "+j+" Richtig";
-							//tf[i][j].setText(""+eg[i][j]);
+							tf[i][j].setText(""+eg[i][j]);
 							tf[i][j].setBackground(Color.green);
 						}else if(!(eg[i][j].equals(" ") )){
 							konsole = konsole+"\n"+i+" "+j+" Falsch";
