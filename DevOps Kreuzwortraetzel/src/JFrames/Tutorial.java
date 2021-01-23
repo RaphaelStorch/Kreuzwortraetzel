@@ -24,18 +24,18 @@ public class Tutorial extends JFrame {
 	private static JButton schwerButton = new JButton("Schwer");
 	private static JLabel[] spielanleitung= new JLabel[10]; 
 	private static JLabel hintergrund = new JLabel("Hintergrundbild"); 
-	private JPanel contentPane = new JPanel();;
+	private JPanel inhaltsbereich = new JPanel();;
 	
 	
 	void Standarts(){
 		setIconImage(Toolkit.getDefaultToolkit().getImage("..\\DevOps Kreuzwortraetzel\\Bilder\\hicon.jpg"));
 		setTitle("Updater");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 637, 443);
+		setBounds(100, 100, 730, 450);
 		
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(null);
-		setContentPane(contentPane); 
+		inhaltsbereich.setBorder(new EmptyBorder(5, 5, 5, 5));
+		inhaltsbereich.setLayout(null);
+		setContentPane(inhaltsbereich);
 	}
 	
 	
@@ -45,11 +45,11 @@ public class Tutorial extends JFrame {
 		
 		Tutorial.einfachButtonListener(einfachButton);
 		einfachButton.setBounds(20,20,200,20);
-		contentPane.add(einfachButton);
+		inhaltsbereich.add(einfachButton);
 		Tutorial.mittelButtonListener(mittelButton);
-		contentPane.add(mittelButton);
+		inhaltsbereich.add(mittelButton);
 		Tutorial.schwerButtonListener(schwerButton);
-		contentPane.add(schwerButton);
+		inhaltsbereich.add(schwerButton);
 		
 		
 		JLabel lblNewLabel = new JLabel("Tutorial");
@@ -64,14 +64,14 @@ public class Tutorial extends JFrame {
 		spielanleitung[5].setText("W\\u00E4hle Start");
 		hintergrund.setIcon(new ImageIcon("C:\\Users\\Raphael\\Desktop\\Git\\DEV OPS 2\\Kreuzwortraetzel\\Logo.png"));
 		hintergrund.setBounds(0, 0, 623, 406);
-		contentPane.add(hintergrund);
+		inhaltsbereich.add(hintergrund);
 		
 		JLabel lblNewLabel_6 = new JLabel("New label");
 		lblNewLabel_6.setIcon(new ImageIcon("..\\DevOps Kreuzwortraetzel\\Bilder\\hicon3.gif"));
 		
 		lblNewLabel.setBounds(10, 10, 100, 10);
 		lblNewLabel.setVisible(true);
-		contentPane.add(lblNewLabel);
+		inhaltsbereich.add(lblNewLabel);
 		
 		
 	}
