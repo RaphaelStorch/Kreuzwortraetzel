@@ -1,12 +1,41 @@
 
-## DevOps Projekt fï¿½r Methoden und Werkzeuge 
+## DevOps Projekt fuer Methoden und Werkzeuge 
 
-![Alt-Text](https://3.bp.blogspot.com/-nbI3N4nIBOY/W2dfkZef5gI/AAAAAAAA3nU/gCd3N_yu7FQgymn57J4FmvHYgKZhwkdLwCLcBGAs/s640/ezgif.com-resize-131.gif)
+![Alt-Text](https://github.com/RaphaelStorch/Kreuzwortraetzel/blob/main/Logo.png)
 
 -  Gruppenname: Team Star
 
 -  Developer: Mark-Viktor Voth, Raphael Storch, Gufran Oezmert
 
+-  Thema: Kreuzwort
+
+
+## Update 6.01.2021
+
+-  Neujahrs Review
+-  Weitere Aufgaben Verteilung
+-  Gufran: Product Backlog
+-  Gufran: User Stories
+-  Raphael: Bugfix
+-  Mark: Mehr Woerter
+
+## Update 15.12.2020
+
+-  Gufran: Sound Datei erstellt 
+-  Raphael: Overlay + Basis zu Kreuzwortraetzel
+-  Mark: Woerter und Fragen rausgesucht
+
+
+## Update 08.12.2020
+
+-  Java Linter für Git Hub
+-  Eclipse als gemeisamen Editor verwenden
+
+
+## Update 01.12.2020
+
+-  Umstrukturierung von Trello zu Git Hub
+-  Exclusive Uebung besprochen
 
 ## Update 24-11-2020
 
