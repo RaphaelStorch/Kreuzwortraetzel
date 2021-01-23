@@ -236,17 +236,17 @@ public class Mittel extends JFrame {
 		//contentPane.add(textPane);
 
 	}
-static int konsolenzähler=0; 
+static int konsolenzaehler=0; 
 	void mainButton() {
 		btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				konsolenzähler++;
+				konsolenzaehler++;
 				Punktestand=0;
 				for(int i=0; i<21; i++) {
 					for(int j=0; j<20; j++) {
 						eg[i][j]=tf[i][j].getText();
 						if(eg[i][j].equals(" "+ aw[i][j])) {
-							if(j==0)konsole = konsole + "\n---Ausgabe Nr." +konsolenzähler + "---" + "\n";
+							if(j==0)konsole = konsole + "\n---Ausgabe Nr." +konsolenzaehler + "---" + "\n";
 							konsole = konsole+"\n"+i+" "+j+" Richtig,  +1 ";
 							tf[i][j].setText(""+eg[i][j]);
 
