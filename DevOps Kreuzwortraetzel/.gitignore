@@ -3,4 +3,4 @@ src/.classpath
 src/.project
 src/Logik/.gitignore
 src/wortcutter/.gitignore
-/bin/*
+/bin/
