@@ -391,7 +391,7 @@ static int complete;
 				if(e.getSource().equals(textField_2)) {
 					complete++;
 					if(complete==5) {
-						System.out.println("Cheat ausgelöst");
+						System.out.println("Cheat ausgeloest");
 						for(int i=0; i<21; i++) {
 							for(int j=0; j<20; j++) {
 								if(!(tf[i][j].getBackground().equals(Color.black)))tf[i][j].setText(" "+aw[i][j]);

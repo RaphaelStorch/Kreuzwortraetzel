@@ -16,7 +16,7 @@ import JFrames.Mittel;
 
 public class FragenAnzeiger {
 
-	static String path = "..\\DevOps Kreuzwortraetzel\\Texte\\mittelFragen.csv";
+	static String path = "..\\DevOps Kreuzwortraetzel\\res\\database\\mittelFragen.csv";
 	static String line = ""; 
 	static String[][] fragen= new String[30][2]; 
 
