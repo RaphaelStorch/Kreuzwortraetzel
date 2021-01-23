@@ -22,7 +22,7 @@ public class Musicloader {
 	
 	public void load() {
 		
-		sound = new File("res/collect.wav");	
+		sound = new File("res/sounds/collect.wav");	
 	}
 	
 	public void play(File sound) {

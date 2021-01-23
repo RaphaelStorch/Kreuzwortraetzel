@@ -11,7 +11,7 @@ public class Window implements ActionListener {
 
 	private JFrame frame; //Unser Frame
 	private JButton btnPlay; //Unser PlayButton
-	private musicloader music; //sound
+	private Musicloader music; //sound
 
 	public Window(int Width, int Height, String title) { //Wird von der Main-Methoder der Main-Klasse aufgerufen
 
@@ -22,7 +22,7 @@ public class Window implements ActionListener {
 		btnPlay.addActionListener(this); //Dem Button wird ein ActionListener hinzugefügt (Erkennung ob Button aktiviert wird)
 		btnPlay.setVisible(true); // Der Button wird sichtbar gemacht
 		
-		music = new musicloader(); //sound
+		music = new Musicloader(); //sound
 		music.load();
 		
 		frame.setSize(Width,Height); //Bestimmt die Größe unseres Frames
@@ -41,7 +41,7 @@ public class Window implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		
 		if(e.getSource() == btnPlay){ //sound
-			music.play(musicloader.sound);
+			music.play(Musicloader.sound);
 		}
 		
 	}
