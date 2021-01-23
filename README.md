@@ -1,6 +1,7 @@
 
 ## DevOps Projekt fuer Methoden und Werkzeuge 
 
+[![GitHub Super-Linter](https://github.com/RaphaelStorch/Kreuzwortraetzel/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 ![Alt-Text](https://github.com/RaphaelStorch/Kreuzwortraetzel/blob/main/Logo.png)
 
 -  Gruppenname: Team Star
