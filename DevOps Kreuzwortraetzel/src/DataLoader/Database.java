@@ -1,4 +1,4 @@
-package wortcutter;
+package DataLoader;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

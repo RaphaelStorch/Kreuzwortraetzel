@@ -32,8 +32,6 @@ import javax.swing.UIManager;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.border.EmptyBorder;
 
-import wortcutter.Database;
-import wortcutter.FragenAnzeiger;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
@@ -51,6 +49,8 @@ import javax.swing.plaf.ColorUIResource;
 import javax.swing.plaf.metal.DefaultMetalTheme;
 import javax.swing.plaf.metal.MetalLookAndFeel;
 
+import DataLoader.Database;
+import DataLoader.FragenAnzeiger;
 import Logik.Frameassistent;
 
 

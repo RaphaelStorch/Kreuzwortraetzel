@@ -1,4 +1,4 @@
-package wortcutter;
+package DataLoader;
 
 import java.awt.Color;
 import java.awt.event.FocusAdapter;

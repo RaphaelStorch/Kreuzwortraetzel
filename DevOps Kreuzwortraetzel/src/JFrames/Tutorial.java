@@ -1,4 +1,4 @@
-package Logik;
+package JFrames;
 
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;

@@ -1,8 +1,6 @@
 package Logik;
 
-import java.util.Scanner;
-
-import wortcutter.FragenAnzeiger;
+import JFrames.Tutorial;
 
 public class Main {
 	public static void main(String[] args) {

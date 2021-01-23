@@ -14,7 +14,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import wortcutter.Database;
+import DataLoader.Database;
+import JFrames.Tutorial;
 
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;

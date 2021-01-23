@@ -23,8 +23,8 @@ import javax.swing.JTextPane;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.border.EmptyBorder;
 
+import DataLoader.Database;
 import Logik.Frameassistent;
-import wortcutter.Database;
 
 public class Schwer extends JFrame {
 

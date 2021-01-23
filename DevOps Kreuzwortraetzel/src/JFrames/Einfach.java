@@ -25,8 +25,8 @@ import javax.swing.UIManager;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.border.EmptyBorder;
 
+import DataLoader.Database;
 import Logik.Frameassistent;
-import wortcutter.Database;
 
 public class Einfach extends JFrame {
 
