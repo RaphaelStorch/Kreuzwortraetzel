@@ -98,17 +98,6 @@ public class Frameassistent{
 		hauptmenu.setForeground(Color.green);
 		hauptmenu.setFont(buttonFond);
 	}
-	void mainFrageFeld(JTextField fragefeld) {
-		fragefeld = new JTextField();
-		fragefeld.setBounds(31, 20, 561, 45);
-		Font f = new Font ("Comic Sans", Font.BOLD, 16);
-		fragefeld.setFont(f);
-		fragefeld.setColumns(10);
-		fragefeld.setBackground(Color.black);
-		fragefeld.setForeground(Color.green);
-		fragefeld.setEditable(false);
-		fragefeld.setBorder(new TitledBorder(null, "Fragefeld", TitledBorder.LEADING, TitledBorder.TOP, null, Color.green));
-	}
 	void hintergrundBild(JLabel hintergrund) {
 		hintergrund.setIcon(new ImageIcon(Mittel.class.getResource("/JFrames/pics/hintergrund2.gif")));
 		hintergrund.setBounds(0, 0, 1200, 1000);

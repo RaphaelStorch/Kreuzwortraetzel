@@ -30,7 +30,7 @@ public class Tutorial extends JFrame {
 	void Standarts(){
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Tutorial.class.getResource("/JFrames/pics/Team STar Mario (1).png")));
 		
-		setTitle("Updater");
+		setTitle("Tutorial");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1300, 750);
 		
@@ -45,11 +45,13 @@ public class Tutorial extends JFrame {
 		Standarts();
 		
 		Tutorial.einfachButtonListener(einfachButton);
-		einfachButton.setBounds(20,20,200,20);
+		einfachButton.setBounds(20,60,298,107);
 		inhaltsbereich.add(einfachButton);
 		Tutorial.mittelButtonListener(mittelButton);
+		einfachButton.setBounds(20,40,200,20);
 		inhaltsbereich.add(mittelButton);
 		Tutorial.schwerButtonListener(schwerButton);
+		einfachButton.setBounds(20,60,200,20);
 		inhaltsbereich.add(schwerButton);
 		
 		
