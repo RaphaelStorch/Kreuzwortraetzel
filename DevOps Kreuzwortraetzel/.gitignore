@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-#neue GitIgnore
-/bin/*
-=======
 #Eclipse Files
 src/.classpath
 src/.project
 src/Logik/.gitignore
 src/wortcutter/.gitignore
 /bin/
->>>>>>> Cleanup
