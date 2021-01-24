@@ -2,28 +2,17 @@ package JFrames;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
-
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-
 import javax.swing.JScrollPane;
-import javax.swing.border.TitledBorder;
-
 import DataLoader.Database;
 import DataLoader.FragenAnzeiger;
+import Logik.TestButton;
 
 public class Mittel extends JFrame {
 
@@ -39,24 +28,24 @@ public class Mittel extends JFrame {
 
 
 
-	public static JPanel contentPane=new JPanel();
-	public static JButton btn = new JButton("Testen");
+	private static JPanel contentPane=new JPanel();
+	private static JButton testButton = new JButton("Testen");
 	public static JTextField[][] tf = new JTextField[21][21];
-	public final static int width=32; 
-	public final static int height=30; 
-	public final static int x = 50; 
-	public final static int y = 80; 
-	public static JTextField fragefeld;
-	public static String[][] aw = Database.getMatrix(); 
-	public static String[][] eg = Database.getMatrixEg(); 
-	public static String konsole =""; 
-	private static JTextField textField_2;
+	private final static int width=32; 
+	private final static int height=30; 
+	private final static int x = 50; 
+	private final static int y = 80; 
+	public static JTextField fragefeld= new JTextField();;
+	private static String[][] aw = Database.getMatrix(); 
+	private static String[][] eg = Database.getMatrixEg(); 
+	private static String konsole =""; 
+	private static JTextField textField_2 = new JTextField("Cheatcode eingeben");
 	static JTextPane textPane = new JTextPane();
 	static JPanel panel = new JPanel();
 	static JLabel lblNewLabel_1 = new JLabel("motivation");
 	static int l = 0; 
 	static int p = 0;
-	static int Punktestand =0; 
+	public static int Punktestand =0; 
 	static Font buttonfont= new Font ("Arial", Font.BOLD, 20);
 	static JLabel PunkteLabel = new JLabel("Punktestand: " + Punktestand);
 	static JScrollPane scrollPane = new JScrollPane(textPane,  
@@ -71,7 +60,8 @@ public class Mittel extends JFrame {
 
 		System.out.println("Starte auf Mittel");
 
-		Frameassistent frameassistent = new Frameassistent(this, contentPane, textPane, hauptmenu, buttonfont);
+		Frameassistent frameassistent = new Frameassistent(this, contentPane, textPane, 
+				hauptmenu, buttonfont, fragefeld);
 		hintergrund.setIcon(new ImageIcon(Mittel.class.getResource("/JFrames/pics/hintergrund2.gif")));
 		hintergrund.setBounds(0, 0, 1200, 1000);
 
@@ -95,9 +85,16 @@ public class Mittel extends JFrame {
 		lblNewLabel_1.setBounds(668, 406, 168, 134);
 		contentPane.add(lblNewLabel_1);
 
-		mainButton();
-		mainfrageFeld();		
+		
+		
+		textField_2.setBounds(668, 347, 96, 19);
+		contentPane.add(textField_2);
+		textField_2.setColumns(10);
+		TestButton tb = new TestButton(testButton, tf, eg, aw, PunkteLabel, fragefeld, scrollPane, 
+				textField_2, lblNewLabel_1, hintergrund, this, textPane,buttonfont, contentPane);
 
+		contentPane.add(testButton);
+		contentPane.add(fragefeld);
 	//	testFeld();
 
 
@@ -119,131 +116,4 @@ public class Mittel extends JFrame {
 		}
 		contentPane.add(hintergrund);
 	}
-
-
-	static int konsolenzaehler=0; 
-	void mainButton() {
-		btn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				konsolenzaehler++;
-				Punktestand=0;
-				for(int i=0; i<21; i++) {
-					for(int j=0; j<20; j++) {
-						eg[i][j]=tf[i][j].getText();
-						if(eg[i][j].equals(" "+ aw[i][j])) {
-							if(j==0)konsole = konsole + "\n---Ausgabe Nr." +konsolenzaehler + "---" + "\n";
-							konsole = konsole+"\n"+i+" "+j+" Richtig,  +1 ";
-							tf[i][j].setText(""+eg[i][j]);
-
-							tf[i][j].setBackground(Color.green);
-
-							Punktestand = Punktestand + 1;
-							PunkteLabel.setText("Punktestand: " + Punktestand);
-
-							if(Punktestand==122) {
-								System.out.println("Volle Punktzahl");
-								String[] yesNoOptions = { "Ja", "Nein", "Abbrechen" };
-
-								int n = JOptionPane.showOptionDialog( null,
-										"GEWONNEN! Endscreen sehen?",               // question
-										"Ja/Nein/Abbrechen",           // title
-										JOptionPane.YES_NO_CANCEL_OPTION,
-										JOptionPane.QUESTION_MESSAGE,  // icon
-										null, yesNoOptions,yesNoOptions[0] );
-
-								if ( n == JOptionPane.YES_OPTION ) {
-									System.out.println("Ja gewählt");
-									Mittel.Punktestand = 1000;
-									btn.setVisible(false);
-									fragefeld.setVisible(false);
-									panel.setVisible(false);
-									scrollPane.setVisible(false);
-									textField_2.setVisible(false);
-									lblNewLabel_1.setVisible(false);
-									PunkteLabel.setVisible(false);
-								}
-							}
-
-							//							//wenn man mal durchgekommen ist 
-							if(Punktestand ==1000) {
-								fragefeld.setText("GESCHAFT, DU HAST DIE VOLLE PUNKTZAHL");
-								hintergrund.setIcon(new ImageIcon("..\\DevOps Kreuzwortraetzel\\Bilder\\Geschaft2.jpg"));
-								hintergrund.addFocusListener(new FocusAdapter() {
-									@Override
-									public void focusGained(FocusEvent e) {
-										System.out.println("Mittel gewonnen");
-										String[] yesNoOptions = { "Ja", "Nein", "Abbrechen" };
-
-										int n = JOptionPane.showOptionDialog( null,
-												"Nächstes Level?",               // question
-												"Ja/Nein/Abbrechen",           // title
-												JOptionPane.YES_NO_CANCEL_OPTION,
-												JOptionPane.QUESTION_MESSAGE,  // icon
-												null, yesNoOptions,yesNoOptions[0] );
-
-										if ( n == JOptionPane.YES_OPTION ) {
-											System.out.println("Ja gewählt");
-											Schwer.main(null);
-										}
-									}
-								});
-
-								hintergrund.addMouseListener(new MouseAdapter() {
-									@Override
-									public void mouseClicked(MouseEvent e) {
-										System.out.println("Mittel gewonnen");
-										String[] yesNoOptions = { "Ja", "Nein", "Abbrechen" };
-
-										int n = JOptionPane.showOptionDialog( null,
-												"Nächstes Level?",               // question
-												"Ja/Nein/Abbrechen",           // title
-												JOptionPane.YES_NO_CANCEL_OPTION,
-												JOptionPane.QUESTION_MESSAGE,  // icon
-												null, yesNoOptions,yesNoOptions[0] );
-
-										if ( n == JOptionPane.YES_OPTION ) {
-											System.out.println("Ja gewählt");
-											setVisible(false);
-											Schwer.main(null);
-
-										}
-									}
-								});
-
-							}
-						}else if(!(eg[i][j].equals(" ") )){
-							konsole = konsole+"\n"+i+" "+j+" Falsch,  -1";
-							Punktestand-=1;
-							PunkteLabel.setText("Punktestand: " + Punktestand);
-							//tf[i][j].setText(""+eg[i][j]);
-							tf[i][j].setBackground(Color.red);
-						}	else {}
-					}
-				}
-				textPane.setText(textPane.getText() + konsole + "\nPunktestand: " + Punktestand + "\n");
-			}
-		});
-		btn.setBounds(668, 625, 100, 35);
-
-		btn.setBackground(Color.black);
-		btn.setForeground(Color.green);
-		btn.setFont(buttonfont);
-		contentPane.add(btn);
-
-
-	}
-
-	void mainfrageFeld() {
-		fragefeld = new JTextField();
-		fragefeld.setBounds(31, 20, 561, 45);
-		Font f = new Font ("Comic Sans", Font.BOLD, 16);
-		fragefeld.setFont(f);
-		contentPane.add(fragefeld);
-		fragefeld.setColumns(10);
-		fragefeld.setBackground(Color.black);
-		fragefeld.setForeground(Color.green);
-		fragefeld.setEditable(false);
-		fragefeld.setBorder(new TitledBorder(null, "Fragefeld", TitledBorder.LEADING, TitledBorder.TOP, null, Color.green));
-	}
-
 }

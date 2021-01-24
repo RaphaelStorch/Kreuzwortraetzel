@@ -48,11 +48,12 @@ public class Frameassistent{
 		//	       defaults.put("TextField.font", defaultfont);
 		//	       defaults.put("Label.font", defaultfont);
 	}
-	public Frameassistent(JFrame jf, JPanel contentPane, JTextPane textPane, JButton hauptmenu, Font buttonfont) {
+	public Frameassistent(JFrame jf, JPanel contentPane, JTextPane textPane, 
+			JButton hauptmenu, Font buttonfont, JTextField fragefeld) {
 		Standards(jf, contentPane);
 		konsole(textPane);
 		hauptMenuButton(hauptmenu, jf, buttonfont);
-		//mainfrageFeld(fragefeld);
+		mainfrageFeld(fragefeld);
 
 	}
 
@@ -199,5 +200,16 @@ public class Frameassistent{
 			}
 		}
 
+	}
+	
+	void mainfrageFeld(JTextField fragefeld) {
+		fragefeld.setBounds(31, 20, 561, 45);
+		Font f = new Font ("Comic Sans", Font.BOLD, 16);
+		fragefeld.setFont(f);
+		fragefeld.setColumns(10);
+		fragefeld.setBackground(Color.black);
+		fragefeld.setForeground(Color.green);
+		fragefeld.setEditable(false);
+		fragefeld.setBorder(new TitledBorder(null, "Fragefeld", TitledBorder.LEADING, TitledBorder.TOP, null, Color.green));
 	}
 }
