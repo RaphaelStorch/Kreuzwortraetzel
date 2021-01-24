@@ -41,7 +41,7 @@ public class Frameassistent{
 		jf.setBounds(25, 25, 900, 750);
 	//	jf.setTitle("DevOps Kreuzworträtzel");
 		System.out.println("Loading Icon");
-		jf.setIconImage(Toolkit.getDefaultToolkit().getImage(at.class.getResource("/JFrames/pics/Team STar Mario (1).png")));
+		jf.setIconImage(Toolkit.getDefaultToolkit().getImage(Mittel.class.getResource("/JFrames/pics/Team STar Mario (1).png")));
 //		JLabel lblNewLabel = new JLabel("New label");
 //		lblNewLabel.setIcon(new ImageIcon(at.class.getResource("/JFrames/pics/icon.jpg")));
 	}

@@ -51,6 +51,7 @@ import javax.swing.plaf.metal.MetalLookAndFeel;
 
 import DataLoader.Database;
 import DataLoader.FragenAnzeiger;
+import javax.swing.SwingConstants;
 
 
 public class Mittel extends JFrame {
@@ -80,7 +81,6 @@ public class Mittel extends JFrame {
 	private static JTextField textField_2;
 	static JTextPane textPane = new JTextPane();
 	static JPanel panel = new JPanel();
-	static JLabel lblNewLabel = new JLabel("HintergrundMittel");
 	static JLabel lblNewLabel_1 = new JLabel("motivation");
 	static int l = 0; 
 	static int p = 0;
@@ -90,6 +90,8 @@ public class Mittel extends JFrame {
 	static JScrollPane scrollPane = new JScrollPane(textPane,  
 			JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
 	        JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+	
+	JLabel lblNewLabel = new JLabel("New label");
 	/**
 	 * Create the frame.
 	 */
@@ -109,12 +111,12 @@ public class Mittel extends JFrame {
 		//Frameassistent.font();
 		//	Standards();
 		
-	//	Frameassistent fa = new Frameassistent(this);
+		Frameassistent fa = new Frameassistent(this);
 		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(25, 25, 900, 750);
-		setTitle("DevOps Kreuzworträtzel");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("..\\DevOps Kreuzwortraetzel\\Bilder\\hicon.jpg"));
+//		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		setBounds(25, 25, 900, 750);
+//		setTitle("DevOps Kreuzworträtzel");
+//		setIconImage(Toolkit.getDefaultToolkit().getImage(Mittel.class.getResource("/JFrames/pics/Logo.png")));
 
 
 		
@@ -169,14 +171,6 @@ public class Mittel extends JFrame {
 		mainfrageFeld();		
 		
 		testFeld();
-	
-		
-		
-
-
-		lblNewLabel.setIcon(new ImageIcon("..\\DevOps Kreuzwortraetzel\\Bilder\\hintergrund2.gif"));
-		lblNewLabel.setBounds(10, 0, 886, 713);
-		contentPane.add(lblNewLabel);
 		
 
 		for(int i=0; i<21; i++) {
@@ -198,10 +192,6 @@ public class Mittel extends JFrame {
 
 			}
 		}
-		
-		lblNewLabel.setIcon(new ImageIcon("..\\DevOps Kreuzwortraetzel\\Bilder\\hintergrund2.gif"));
-		lblNewLabel.setBounds(0, 0, 886, 713);
-		contentPane.add(lblNewLabel);
 		
 	}
 	static String typed = "";
@@ -232,6 +222,12 @@ public class Mittel extends JFrame {
 		textPane.setForeground(Color.green);
 		textPane.setEditable(false);
 		//contentPane.add(textPane);
+		
+		
+		lblNewLabel.setIcon(new ImageIcon(Mittel.class.getResource("/JFrames/pics/hintergrund2.gif")));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel.setBounds(0, 0, 876, 696);
+		contentPane.add(lblNewLabel);
 
 	}
 static int konsolenzaehler=0; 
@@ -434,6 +430,8 @@ static int complete;
 		textField_2.setBounds(668, 347, 96, 19);
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
+		
+		
 
 	}
 
