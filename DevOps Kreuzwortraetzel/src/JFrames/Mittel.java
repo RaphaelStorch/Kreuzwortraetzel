@@ -106,9 +106,11 @@ public class Mittel extends JFrame {
 		    SwingUtilities.updateComponentTreeUI(this);
 		
 		System.out.println("Starte auf Mittel");
-		Frameassistent.font();
+		//Frameassistent.font();
 		//	Standards();
-
+		
+	//	Frameassistent fa = new Frameassistent(this);
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(25, 25, 900, 750);
 		setTitle("DevOps Kreuzworträtzel");
@@ -118,9 +120,6 @@ public class Mittel extends JFrame {
 		
 		
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		
-		
-		
 		setContentPane(contentPane);
 		
 		contentPane.setLayout(null);
