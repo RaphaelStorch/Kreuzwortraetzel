@@ -51,7 +51,6 @@ import javax.swing.plaf.metal.MetalLookAndFeel;
 
 import DataLoader.Database;
 import DataLoader.FragenAnzeiger;
-import Logik.Frameassistent;
 
 
 public class Mittel extends JFrame {

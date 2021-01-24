@@ -1,4 +1,4 @@
-package Logik;
+package JFrames;
 
 import java.awt.Font;
 import java.awt.Toolkit;
