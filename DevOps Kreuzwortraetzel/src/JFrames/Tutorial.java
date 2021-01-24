@@ -32,7 +32,7 @@ public class Tutorial extends JFrame {
 		
 		setTitle("Updater");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 730, 450);
+		setBounds(100, 100, 1300, 750);
 		
 		inhaltsbereich.setBorder(new EmptyBorder(5, 5, 5, 5));
 		inhaltsbereich.setLayout(null);
@@ -54,22 +54,13 @@ public class Tutorial extends JFrame {
 		
 		
 		JLabel lblNewLabel = new JLabel("Tutorial");
-		for(int i=0; i<spielanleitung.length; i++) {
-			spielanleitung[i] = new JLabel(); 
-			inhaltsbereich.add(spielanleitung[i]);
-		}
-		spielanleitung[6].setText("Tutorial");
-		spielanleitung[1].setText("1. Schau dir die Fragen genau an!");
-		spielanleitung[2].setText("2. Klicke in das Feld um deine Antwort einzugeben!");
-		spielanleitung[3].setText("3. Navigiere mit der Tap Taste um auf das n\\u00E4chste Feld zu gehen");
-		spielanleitung[4].setText("4. Klicke auf den Test-Knopf um deine Eingabe zu \\u00DCberpr\\u00FCfen");
-		spielanleitung[5].setText("W\\u00E4hle Start");
 		
 		
 		
 		
-		hintergrund.setIcon(new ImageIcon("C:\\Users\\Raphael\\Desktop\\Git\\DEV OPS 2\\Kreuzwortraetzel\\Logo.png"));
-		hintergrund.setBounds(0, 0, 623, 406);
+		
+		hintergrund.setIcon(new ImageIcon(Tutorial.class.getResource("/JFrames/pics/iconResized.jpg")));
+		hintergrund.setBounds(0, 0, 1200, 676);
 		inhaltsbereich.add(hintergrund);
 		
 		lblNewLabel.setBounds(10, 10, 100, 10);
