@@ -13,7 +13,7 @@ public class Musicloader {
 	
 	public static float value;
 	
-	Clip clip;
+	static Clip clip;
 
 	public Musicloader() {
 		
@@ -25,7 +25,7 @@ public class Musicloader {
 		sound = new File("res/sounds/collect.wav");	
 	}
 	
-	public void play(File sound) {
+	public static void play(File sound) {
 	
 		try {
 			

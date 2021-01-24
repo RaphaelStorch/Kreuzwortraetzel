@@ -103,14 +103,6 @@ public class Frameassistent{
 		hintergrund.setBounds(0, 0, 1200, 1000);
 	}
 
-
-
-
-
-
-
-
-
 	void tfListener(int i, int j, JTextField[][] tf, JTextField fragefeld) {
 		tf[i][j].addMouseListener(new MouseAdapter() {
 			@Override
