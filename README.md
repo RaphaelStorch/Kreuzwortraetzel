@@ -13,7 +13,7 @@
 - Raphael: Bugfix
 - Mark: Mehr Woerter
 ## Meeting 15.12.2020
-- Gufran: Sound Datei erstellt 
+- Gufran: Sound Datei erstellt
 - Raphael: Overlay + Basis zu Kreuzwortraetzel
 - Mark: Woerter und Fragen rausgesucht
 ## Meeting 08.12.2020
@@ -23,16 +23,16 @@
 - Umstrukturierung von Trello zu Git Hub
 - Exclusive Uebung besprochen
 ## Meeting 24-11-2020
-- Brainstroming für Nice to Have 
-- Brainstorming für Must haves 
-- Grobes aufteilen der Rollen  
+- Brainstroming für Nice to Have
+- Brainstorming für Must haves
+- Grobes aufteilen der Rollen
 ## Meeting 17-11-2020
-- Trello installiert 
-- Trello-Board erstellt 
+- Trello installiert
+- Trello-Board erstellt
 - grobe Tasks besprochen 
-## Meeting Pre-Starting  
-- Woechentliches Treffen festgelegt 
-- Team vollstaendig 
+## Meeting Pre-Starting
+- Woechentliches Treffen festgelegt
+- Team vollstaendig
 - angelegt Eclipse Workspace
-- angelegt Logik Package 
-- angelegt Kreuzwortraetzel.java 
+- angelegt Logik Package
+- angelegt Kreuzwortraetzel.java
