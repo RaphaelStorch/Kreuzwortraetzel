@@ -61,10 +61,8 @@ public class Mittel extends JFrame {
 		System.out.println("Starte auf Mittel");
 
 		Frameassistent frameassistent = new Frameassistent(this, contentPane, textPane, 
-				hauptmenu, buttonfont, fragefeld);
-		hintergrund.setIcon(new ImageIcon(Mittel.class.getResource("/JFrames/pics/hintergrund2.gif")));
-		hintergrund.setBounds(0, 0, 1200, 1000);
-
+				hauptmenu, buttonfont, fragefeld, hintergrund);
+		
 		contentPane.add(hauptmenu);
 
 		PunkteLabel.setBackground(Color.BLACK);
@@ -89,7 +87,6 @@ public class Mittel extends JFrame {
 		
 		textField_2.setBounds(668, 347, 96, 19);
 		contentPane.add(textField_2);
-		textField_2.setColumns(10);
 		TestButton tb = new TestButton(testButton, tf, eg, aw, PunkteLabel, fragefeld, scrollPane, 
 				textField_2, lblNewLabel_1, hintergrund, this, textPane,buttonfont, contentPane);
 
@@ -111,7 +108,6 @@ public class Mittel extends JFrame {
 				if(!(aw[i][j].equals(" "))) {
 					tf[i][j].addFocusListener(FragenAnzeiger.fragenMittel(i*10+j+1));
 				}
-
 			}
 		}
 		contentPane.add(hintergrund);

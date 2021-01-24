@@ -49,11 +49,12 @@ public class Frameassistent{
 		//	       defaults.put("Label.font", defaultfont);
 	}
 	public Frameassistent(JFrame jf, JPanel contentPane, JTextPane textPane, 
-			JButton hauptmenu, Font buttonfont, JTextField fragefeld) {
+			JButton hauptmenu, Font buttonfont, JTextField fragefeld, JLabel hintergrundBild) {
 		Standards(jf, contentPane);
 		konsole(textPane);
 		hauptMenuButton(hauptmenu, jf, buttonfont);
 		mainfrageFeld(fragefeld);
+		hintergrundBild(hintergrundBild);
 
 	}
 
@@ -97,7 +98,6 @@ public class Frameassistent{
 		hauptmenu.setForeground(Color.green);
 		hauptmenu.setFont(buttonFond);
 	}
-
 	void mainFrageFeld(JTextField fragefeld) {
 		fragefeld = new JTextField();
 		fragefeld.setBounds(31, 20, 561, 45);

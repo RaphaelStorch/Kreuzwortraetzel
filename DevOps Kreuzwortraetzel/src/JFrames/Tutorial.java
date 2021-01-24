@@ -25,10 +25,11 @@ public class Tutorial extends JFrame {
 	private static JLabel[] spielanleitung= new JLabel[10]; 
 	private static JLabel hintergrund = new JLabel("Hintergrundbild"); 
 	private JPanel inhaltsbereich = new JPanel();;
-	
+
 	
 	void Standarts(){
-		setIconImage(Toolkit.getDefaultToolkit().getImage("..\\DevOps Kreuzwortraetzel\\Bilder\\hicon.jpg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Tutorial.class.getResource("/JFrames/pics/Team STar Mario (1).png")));
+		
 		setTitle("Updater");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 730, 450);
@@ -55,6 +56,7 @@ public class Tutorial extends JFrame {
 		JLabel lblNewLabel = new JLabel("Tutorial");
 		for(int i=0; i<spielanleitung.length; i++) {
 			spielanleitung[i] = new JLabel(); 
+			inhaltsbereich.add(spielanleitung[i]);
 		}
 		spielanleitung[6].setText("Tutorial");
 		spielanleitung[1].setText("1. Schau dir die Fragen genau an!");
@@ -62,12 +64,13 @@ public class Tutorial extends JFrame {
 		spielanleitung[3].setText("3. Navigiere mit der Tap Taste um auf das n\\u00E4chste Feld zu gehen");
 		spielanleitung[4].setText("4. Klicke auf den Test-Knopf um deine Eingabe zu \\u00DCberpr\\u00FCfen");
 		spielanleitung[5].setText("W\\u00E4hle Start");
+		
+		
+		
+		
 		hintergrund.setIcon(new ImageIcon("C:\\Users\\Raphael\\Desktop\\Git\\DEV OPS 2\\Kreuzwortraetzel\\Logo.png"));
 		hintergrund.setBounds(0, 0, 623, 406);
 		inhaltsbereich.add(hintergrund);
-		
-		JLabel lblNewLabel_6 = new JLabel("New label");
-		lblNewLabel_6.setIcon(new ImageIcon("..\\DevOps Kreuzwortraetzel\\Bilder\\hicon3.gif"));
 		
 		lblNewLabel.setBounds(10, 10, 100, 10);
 		lblNewLabel.setVisible(true);
