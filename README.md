@@ -29,7 +29,7 @@
 ## Meeting 17-11-2020
 - Trello installiert
 - Trello-Board erstellt
-- grobe Tasks besprochen 
+- grobe Tasks besprochen
 ## Meeting Pre-Starting
 - Woechentliches Treffen festgelegt
 - Team vollstaendig
