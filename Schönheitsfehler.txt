@@ -1,9 +1,0 @@
-- man kann in die schwrzen blöcke reinschreiben (Done)
-- punkte system ist zu unübersichtlich 
-- nicht alle eingabe felder werden gelb
-- übereinandere liegende eingabe felder werden rot wenn nicht beide eingegeben sind (Done)
-- jedesmal wenn man testen drückt werden die Punkte die man bekommen hat drauf gerechnet (Done)
-- es gibt keine taste zurück
-- das tutorial mit einem bild wechseln
-
-
