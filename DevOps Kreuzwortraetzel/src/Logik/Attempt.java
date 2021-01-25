@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import DataLoader.Database;
+import JFrames.Frameassistent;
 import JFrames.Tutorial;
 
 import javax.swing.GroupLayout;
