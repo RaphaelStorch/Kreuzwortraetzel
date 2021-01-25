@@ -97,13 +97,18 @@ public class Mittel extends JFrame {
 
 		for(int i=0; i<21; i++) {
 			for(int j=0; j<20; j++) {
+				Font f = new Font ("Comic Sans", Font.BOLD, 16);
 				tf[i][j]= new JTextField();
 				tf[i][j].setBounds(40+j*width, 70+i*height, width, height);
 				contentPane.add(tf[i][j]);
 
 				tf[i][j].setText(" ");
-				frameassistent.tfListener(i, j, tf, fragefeld);
-				if(aw[i][j].equals(" ")) {tf[i][j].setBackground(Color.black);tf[i][j].setEditable(false);tf[i][j].setBorder(null);contentPane.remove(tf[i][j]);}
+				tf[i][j].setFont(f);
+				frameassistent.tfListener(i, j, tf, fragefeld, testButton);
+				if(aw[i][j].equals(" ")) {tf[i][j].setBackground(Color.black);
+				tf[i][j].setEditable(false);
+				tf[i][j].setBorder(null);contentPane.remove(tf[i][j]);
+				}
 				tf[i][j].setColumns(10);
 				if(!(aw[i][j].equals(" "))) {
 					tf[i][j].addFocusListener(FragenAnzeiger.fragenMittel(i*10+j+1));

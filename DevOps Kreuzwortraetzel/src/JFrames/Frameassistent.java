@@ -36,6 +36,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
 import Logik.Main;
+import Logik.TestButton;
 import Logik.at;
 
 
@@ -50,15 +51,15 @@ public class Frameassistent{
 	}
 	public Frameassistent(JFrame jf, JPanel contentPane, JTextPane textPane, 
 			JButton hauptmenu, Font buttonfont, JTextField fragefeld, JLabel hintergrundBild) {
-		Standards(jf, contentPane);
+		JFrameStandards(jf, contentPane);
 		konsole(textPane);
 		hauptMenuButton(hauptmenu, jf, buttonfont);
-		mainfrageFeld(fragefeld);
+		frageFeld(fragefeld);
 		hintergrundBild(hintergrundBild);
 
 	}
 
-	public void Standards(JFrame jf, JPanel contentPane) { 
+	public void JFrameStandards(JFrame jf, JPanel contentPane) { 
 		System.out.println("Loading Standards");
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jf.setBounds(25, 25, 900, 750);
@@ -72,18 +73,10 @@ public class Frameassistent{
 
 	}
 	void konsole(JTextPane textPane) {
-		textPane.addInputMethodListener(new InputMethodListener() {
-			public void caretPositionChanged(InputMethodEvent event) {
-			}
-			public void inputMethodTextChanged(InputMethodEvent event) {
-
-			}
-		});
 		textPane.setBounds(630, 62, 139, 248);
 		textPane.setForeground(Color.green);
 		textPane.setBackground(Color.BLACK);
 		textPane.setEditable(false);
-
 	}
 
 	void hauptMenuButton(JButton hauptmenu, JFrame jf, Font buttonFond) {
@@ -98,22 +91,13 @@ public class Frameassistent{
 		hauptmenu.setForeground(Color.green);
 		hauptmenu.setFont(buttonFond);
 	}
+	
 	void hintergrundBild(JLabel hintergrund) {
 		hintergrund.setIcon(new ImageIcon(Mittel.class.getResource("/JFrames/pics/hintergrund2.gif")));
 		hintergrund.setBounds(0, 0, 1200, 1000);
 	}
 
-	void tfListener(int i, int j, JTextField[][] tf, JTextField fragefeld) {
-		tf[i][j].addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-			}
-			@Override
-			public void mouseEntered(MouseEvent e) {				
-			}
-			@Override
-			public void mouseExited(MouseEvent e) {
-			}});
+	void tfListener(int i, int j, JTextField[][] tf, JTextField fragefeld, JButton btn) {
 		tf[i][j].addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusGained(FocusEvent e) {
@@ -135,7 +119,7 @@ public class Frameassistent{
 					}
 				}
 				if(e.getKeyChar() == KeyEvent.VK_ENTER) {
-					//btn.doClick();
+					btn.doClick();
 				}
 				if(e.getKeyChar() == KeyEvent.VK_BACK_SPACE) {
 					System.out.println("Gerückt");
@@ -164,13 +148,17 @@ public class Frameassistent{
 			}
 		});
 	}
+	
+	
 	static String typed = "";
 	void standardSize(Object object, String s, JTextField[][] tf) {
+		Font f = new Font ("Comic Sans", Font.BOLD, 16);
 		for(int i=0; i<21; i++) {
 			for(int j=0; j<20; j++) {
 				if(object.equals(tf[i][j])) {
 					if(tf[i][j].getBackground().equals(Color.black)) {return;}
 					tf[i][j].setText(" "+s.substring(0,1).toUpperCase());
+					tf[i][j].setFont(f);
 					tf[i][j].setForeground(Color.BLACK);
 					if(j<20) {
 						if(!(tf[i][j+1].getBackground().equals(Color.black))) {tf[i][j+1].grabFocus();}
@@ -183,7 +171,7 @@ public class Frameassistent{
 
 	}
 	
-	void mainfrageFeld(JTextField fragefeld) {
+	void frageFeld(JTextField fragefeld) {
 		fragefeld.setBounds(31, 20, 561, 45);
 		Font f = new Font ("Comic Sans", Font.BOLD, 16);
 		fragefeld.setFont(f);

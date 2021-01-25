@@ -115,7 +115,7 @@ public class Schwer extends JFrame {
 				contentPane.add(tf[i][j]);
 
 				tf[i][j].setText(" ");
-				frameassistent.tfListener(i, j, tf, fragefeld);
+				frameassistent.tfListener(i, j, tf, fragefeld, testButton);
 				if(aw[i][j].equals(" ")) {tf[i][j].setBackground(Color.black);tf[i][j].setEditable(false);tf[i][j].setBorder(null);contentPane.remove(tf[i][j]);}
 				tf[i][j].setColumns(10);
 				if(!(aw[i][j].equals(" "))) {

@@ -32,7 +32,7 @@ public class TestButton {
 			JTextField textField_2, JLabel lblNewLabel_1, JLabel hintergrund, JFrame jf, JTextPane textPane,
 			Font buttonfont, JPanel contentPane) {
 		
-		testFeld(textField_2, fragefeld, contentPane, tf, aw);
+		testFeld(textField_2, fragefeld, contentPane, tf, aw, testButton);
 		mainButton(testButton, tf, eg, aw, PunkteLabel, fragefeld, scrollPane, 
 				textField_2, lblNewLabel_1, hintergrund, jf, textPane,buttonfont);
 		
@@ -76,6 +76,12 @@ public class TestButton {
 								if ( n == JOptionPane.YES_OPTION ) {
 									System.out.println("Ja gewählt");
 									Mittel.Punktestand = 1000;
+									
+									for(int k=0; i<21; i++) {
+										for(int p=0; j<20; j++) {
+											tf[k][p].setVisible(false);
+										}}
+									
 									testButton.setVisible(false);
 									fragefeld.setVisible(false);
 									scrollPane.setVisible(false);
@@ -161,7 +167,7 @@ public class TestButton {
 	
 	
 	static int complete;
-	void testFeld(JTextField textField_2, JTextField fragefeld, JPanel contentPane, JTextField[][] tf, String[][] aw) {
+	void testFeld(JTextField textField_2, JTextField fragefeld, JPanel contentPane, JTextField[][] tf, String[][] aw, JButton btn) {
 		System.out.println("Hier");
 		textField_2.addMouseListener(new MouseAdapter() {
 			@Override
@@ -181,7 +187,7 @@ public class TestButton {
 								fragefeld.setText("CHEAT AUSGELÖST");
 
 							}}
-						//btn.doClick();
+						btn.doClick();
 						complete=6;
 					}
 					System.out.println("LOL");
