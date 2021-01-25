@@ -169,6 +169,8 @@ public class TestButton {
 	static int complete;
 	void testFeld(JTextField textField_2, JTextField fragefeld, JPanel contentPane, JTextField[][] tf, String[][] aw, JButton btn) {
 		System.out.println("Hier");
+		textField_2.setBounds(668, 347, 96, 19);
+		textField_2.setBackground(Color.black);
 		textField_2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -195,7 +197,7 @@ public class TestButton {
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				textField_2.setBackground(Color.white);
+				textField_2.setBackground(Color.black);
 			}
 		});
 		textField_2.addKeyListener(new KeyAdapter() {
@@ -218,7 +220,7 @@ public class TestButton {
 			}
 			@Override
 			public void focusLost(FocusEvent e) {
-				textField_2.setBackground(Color.white);
+				textField_2.setBackground(Color.green);
 				fragefeld.setText("");
 			}
 		});
