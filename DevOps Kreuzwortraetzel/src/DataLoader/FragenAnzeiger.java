@@ -367,12 +367,12 @@ public class FragenAnzeiger {
 		if(o == 100 +14 || o == 200 + 14 || o== 300 +14 || o== 400 +14 || o == 500 +14 || o==500+14 || o == 600 +14 ) {
 			fa[3]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F6);}
+				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F3);}
 				@Override
 				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
-				return fa[6];}
+				return fa[3];}
 		//"Wie bezeichnet man einen Code der gut geschrieben ist?","Clean"
-		if(o>=4&&o<=9) {
+		if(o == 1000 +6 || o == 1100 + 6 || o== 1200 +6 || o== 1300 +6) {
 			fa[4]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F4);
@@ -383,8 +383,8 @@ public class FragenAnzeiger {
 				for(int i = 0; i<6; i++)Schwer.tf[4/10][4%10+i-1].setBackground(Color.white);
 				}};
 				return fa[4];}
-		//"Was ist wichtig in der Programmierung, dass jeder Mensch zur Geburt bekommt","Namen"
-		if(o>=109&&o<=112) {
+		//"Wichtig in der Programmierung dass jeder Mensch bekommen hat","Namen"
+		if(o == 0 +16 || o == 100 + 16 || o== 200 +16 || o== 300 +16 || o== 400 +16) {
 			fa[5]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F5);}
@@ -392,8 +392,7 @@ public class FragenAnzeiger {
 				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
 				return fa[5];}
 		//"Ein Unterprogramm in der objektorientierten Programmierung","Methode"
-		if( o == 60 +14 || o == 70 + 14 || o== 80 +14 || o== 90 +14 
-				|| o == 90 +14 || o==+14 || o ==  +14 || o==120+14 || o==130+14 ) {
+		if( o>=1608 &&o<=1615 ) {
 			fa[6]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F6);}
@@ -404,7 +403,7 @@ public class FragenAnzeiger {
 
 
 		//ab hier von unter noch oben 	
-		if(o>=110 + 2 &&o<=110 +7 ) {
+		if(o == 1600 +13 || o == 1700 + 13 || o== 1800 +13 ) {
 			fa[7]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F7);}
@@ -412,7 +411,8 @@ public class FragenAnzeiger {
 				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
 				return fa[7];}
 		//"Häufiger Fehler, der durch Copy+Paste ausgelöst werden kann","DRY"
-		if(o>=40+3&&o<=40+7) {
+		if(o == 500 +9 || o == 600 + 9 || o== 700 +9 || o == 800 +9 || o == 900 + 9 || o== 1000 +9 
+				|| o == 1100 +9 || o == 1200 + 9 || o== 1300 +9 ) {
 			fa[8]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F8);}
@@ -420,7 +420,7 @@ public class FragenAnzeiger {
 				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
 				return fa[8];}
 		//"Eine Erklärung im Code eines Programmes","Kommentar"
-		if(o>=20+2&&o<=20+11) {
+		if(o>=1102 &&o<=1106) {
 			fa[9]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F9);}
@@ -428,8 +428,8 @@ public class FragenAnzeiger {
 				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
 				return fa[9];}
 		//"Ein besonderer Kommentar neben TODO","FIXME"
-		/*10*/	if( o== 90+16 || o == 100 + 16 || o == 110+16 || o==120 + 16 || o== 130 + 16 
-				|| o == 140+16 || o == 150 + 16 || o == 160+16 || o == 170+16) {
+		/*10*/	if( o == 900 +14 || o == 1000 + 14 || o== 1100 +14 || o == 1200 +14 || o == 1300 + 14 || o== 1400 +14 
+				|| o == 1500 +14 || o == 1600 + 14) {
 			fa[10]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F10);}
@@ -437,7 +437,7 @@ public class FragenAnzeiger {
 				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
 				return fa[10];}
 		//"Ein Platzhalter für eine Grö0ße die einem Rechenprozess Auftritt","Variable"
-		if(o>=120+9&&o<=120+14) {
+		if(o>=311&&o<=317) {
 			fa[11]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F11);}
@@ -445,7 +445,7 @@ public class FragenAnzeiger {
 				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
 				return fa[11];}
 		//"Eine neue Version einer Software","Update"
-		if( o == 40+9 || o == 50 + 9 || o== 60 +9  || o== 70+9 || o== 80 + 9) {
+		if( o>=15&&o<=18) {
 			fa[12]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F12);}
@@ -453,7 +453,7 @@ public class FragenAnzeiger {
 				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
 				return fa[12];}
 		//"Wie nennt man den Test, wo Einzelteile eines Programmes getestet werden?","Unit"
-		if(o == 100+ 9 || o== 110 + 9 || o== 120 + 9 || o == 130 + 9 || o==140+9 || o == 150 +9) {
+		if(o>=1109&&o<=1111) {
 			fa[13]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F13);}
@@ -461,7 +461,7 @@ public class FragenAnzeiger {
 				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
 				return fa[13];}
 		//"Welche Endung braucht eine Textdatei","Txt"
-		if(o== 140 + 11 || o == 150 +11 || o==160+11 || o == 170 +11 || o == 180 +11 || o == 190 +11) {
+		if(o== 300 + 5 || o == 400 +5 || o==500+5 || o == 600 +5 || o == 700 +5) {
 			fa[14]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F14);}
