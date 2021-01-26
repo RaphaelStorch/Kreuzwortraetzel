@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class Database {
 
-	public static String[][] getMatrix1() {
+	public static String[][] getMatrix() {
 		String[][] ma = {
 				//{" "," "," "," "," "," "," "," "," "," ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "}, Vorlage
 		//		{" "," "," "," "," "," ","1"," "," "," ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "},
@@ -38,7 +38,7 @@ public class Database {
 		
 	}
 	
-	public static String[][] getMatrix() {
+	public static String[][] getSchwerMatrix() {
 		String[][] ma = {
 				//{" "," "," "," "," "," "," "," "," "," ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "}, Vorlage
 		//		{" "," "," "," "," "," ","1"," "," "," ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "},

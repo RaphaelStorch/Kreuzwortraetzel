@@ -28,7 +28,7 @@ public class Schwer extends JFrame {
 	private final static int width=32; 
 	private final static int height=30; 
 	public static JTextField fragefeld= new JTextField();;
-	private static String[][] aw = Database.getMatrix(); 
+	private static String[][] aw = Database.getSchwerMatrix(); 
 	private static String[][] eg = Database.getMatrixEg(); 
 	private static JTextField textField_2 = new JTextField("Cheatcode eingeben");
 	static JTextPane textPane = new JTextPane();
