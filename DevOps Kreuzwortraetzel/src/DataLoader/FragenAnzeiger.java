@@ -469,7 +469,7 @@ public class FragenAnzeiger {
 				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
 				return fa[14];}
 		//"Das Satzzeichen womit Dateien in git ignoriert werden","Punkt"
-		if(o>=50+12&&o<=50+18) {
+		if(o>=1211&&o<=1215) {
 			fa[15]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F15);}
@@ -477,7 +477,7 @@ public class FragenAnzeiger {
 				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
 				return fa[15];}
 		//"Wenn man sich bei einer Website anmelden möchte","Log in"
-		if(o == 30 +17 || o == 40 +17 || o == 50+17 || o== 60 + 17 || o== 70 +17 || o==80 +17 || o==90+17 ) {
+		if(o == 900 +11 || o == 1000 +11 || o == 1100+11 || o== 1200 + 11 || o== 1300 +11 || o==1400 +11 ) {
 			fa[16]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F16);}
@@ -485,25 +485,24 @@ public class FragenAnzeiger {
 				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
 				return fa[16];}
 		//"Die Hochschul Fulda version von GitHub","GitLab"
-		if(o>=170+9&&o<=170+14) {
+		if(o == 3 || o == 100 +3 || o == 200+3 || o== 300 + 3 || o== 400 +3 || o==500 +3 ) {
 			fa[17]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F17);}
 				@Override
 				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
 				return fa[17];}
-		//"In Git werden neue Features in einem neuen … entwickelt","Branch"
-		if(o == 40 +4 || o == 50 +4 || o== 60 +4 || o==70 +4 || o == 80+4 || o==90+4 || o==100+4) {
+		//"In Git werden neue Features in einem neuen ? entwickelt","Branch"
+		if(o>=509&&o<=512) {
 			fa[18]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F18);}
+				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F18);hor(o, e, 509, 512, Color.yellow);}
 				@Override
-				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");hor(o, e, 509, 512, Color.white);}};
 				return fa[18];}
 		//"Ein Prinzip was zu einem Problem eine möglichst einfache Lösung anstrebt","KISS"
 
-		if( o == 66 || o == 76 || o == 86 || o == 96 || o == 106 || o == 116 
-				|| o == 126 || o == 136 || o==146 || o == 156 || o == 166 || o == 176 || o == 186 || o == 196) {
+		if(o>=402&&o<=406) {
 			fa[19]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F19);}
@@ -518,7 +517,12 @@ public class FragenAnzeiger {
 
 	}
 
-	
+	static void hor(int o, FocusEvent event, int a, int e, Color farbe){
+        for(int i = a; a<=e; a++) {
+            System.out.println("ERREICHT");
+            Schwer.tf[a/100][a%100-1].setBackground(farbe);
+        }
+    }
 	
 	
 }
