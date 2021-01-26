@@ -497,4 +497,41 @@ public class FragenAnzeiger {
 
 
 	}
+
+	static String Schwerpath = "..\\DevOps Kreuzwortraetzel\\res\\database\\SchwerFragen.csv";
+	static String[][] Schwerfragen= new String[30][2]; 
+
+
+
+
+	static String[] Schwervalues; 
+	public static String[][] getCSVSchwerFragen(){
+		
+		line = "";
+		int counter =0; 
+		int zeile=0; 
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(Schwerpath));
+			while((line = br.readLine())!= null) {
+				Schwervalues= line.split(",");
+				Schwerfragen[counter][0] = " "+counter +". "+ Schwervalues[0];
+				counter++;
+				System.out.println(counter);
+				System.out.println(Schwervalues[0]);
+				System.out.println(Schwerfragen[counter][0]);
+			} 
+		}catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}catch(IOException e) {
+			e.printStackTrace();
+		}	
+
+		return Schwerfragen;		
+	}
+	
+	
 }
+
+
+
+
