@@ -12,6 +12,7 @@ import java.io.IOException;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import JFrames.Einfach;
 import JFrames.Mittel;
 
 public class FragenAnzeiger {
@@ -119,11 +120,11 @@ public class FragenAnzeiger {
 			fa[4]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F4);
-				for(int i = 0; i<6; i++)Mittel.tf[4/10][4%10+i-1].setBackground(Color.yellow);
+
 				}
 				@Override
 				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");
-				for(int i = 0; i<6; i++)Mittel.tf[4/10][4%10+i-1].setBackground(Color.white);
+
 				}};
 				return fa[4];}
 		//Frueherer in Git: "Master",Main"
@@ -331,193 +332,182 @@ public class FragenAnzeiger {
 		final String F20 = einfachfragen[20][0];
 		final String F21 = einfachfragen[21][0];
 
-		JTextField[][] tfcopy = Mittel.tf;
 
-		//Verschmelzung von zwei Dateien,"Merge" (o>=3&&o<=9)
+		//Wie heisst das Team dass das Spiel erstellt hat?,"Star" (>=3&&<=9)
 		if(o == 7 || o == 17 || o == 27 || o == 37 || o == 47){
 			fa[1]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {
 					System.out.println(F1);
-					Mittel.fragefeld.setText(F1);
-					for(int i = 7; i<=47; i=i+10)Mittel.tf[i/10][7-1].setBackground(Color.yellow);
+					Einfach.fragefeld.setText(F1);
+				
 				}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");
-				for(int i = 7; i<=47; i=i+10)Mittel.tf[i/10][7-1].setBackground(Color.white);
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");
+				
 				}};
 				return fa[1];}
-		//Wenn man ein neues Verzeichnis in git haben möchte,"mkdir"
+		//Wie heisst Herr Storch mit Vornamen?,"Raphael"
 		if(o>=153 && o<=157) {
 			fa[2]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {
-					Mittel.fragefeld.setText(F2);
-					for(int i = 0; i<=4; i++)Mittel.tf[153/10-1][153%10+i].setBackground(Color.yellow);
+					Einfach.fragefeld.setText(F2);
+					
 				}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");
-				for(int i = 0; i<=4; i++)Mittel.tf[153/10-1][153%10+i].setBackground(Color.white);}
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");
+				}
 				};
 				return fa[2];}
-		//Befehl zum Anlegen einer Datei in git,"echo"
+		//Wie heisst Gufran mit Nachnamen?,"Oezmert"
 		if(o>=203&&o<=206) {
 			fa[3]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F3);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F3);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[3];}
-		//Ein gespeicherter Zwischenstand,"Commit"
+		//Wie lautet der Doppelname von Herrn Voth,"Viktor"
 		if(o>=4&&o<=9) {
 			fa[4]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F4);
-				for(int i = 0; i<6; i++)Mittel.tf[4/10][4%10+i-1].setBackground(Color.yellow);
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F4);
+				
 				}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");
-				for(int i = 0; i<6; i++)Mittel.tf[4/10][4%10+i-1].setBackground(Color.white);
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");
+				
 				}};
 				return fa[4];}
-		//Frueherer in Git: "Master",Main"
+		//Was brauchte ein Eintrag pro Vorlesung?,"Tagebuch"
 		if(o>=109&&o<=112) {
 			fa[5]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F5);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F5);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[5];}
-		//Mit git ? wechselt man zu einem anderen Branch,"checkout"
+		//Multiple-Choice ?,"Test"
 		if( o == 60 +14 || o == 70 + 14 || o== 80 +14 || o== 90 +14 
 				|| o == 90 +14 || o==100+14 || o == 110 +14 || o==120+14 || o==130+14 ) {
 			fa[6]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F6);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F6);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[6];}
 
 
 
-		//ab hier von unter noch oben 	
+		//VIM: Command Mode Visual Mode und ? Mode,"Insert" 	
 		if(o>=110 + 2 &&o<=110 +7 ) {
 			fa[7]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F7);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F7);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[7];}
-		//Fehler in einem Code beheben,"Bugfix"
+		//VCS=Version Control ?,"System"
 		if(o>=40+3&&o<=40+7) {
 			fa[8]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F8);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F8);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[8];}
-		//Befehl: Wer hat welchen Commit gemacht,"blame"
+		//Initiert wurde Git von Linus ?,"Torvalds"
 		if(o>=20+2&&o<=20+11) {
 			fa[9]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F9);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F9);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[9];}
-		//Modell zu einer nicht agilen Softwareentwicklung,"Wasserfall"
+		//Neues Repository in Git anlegen:git ?,"init"
 		/*10*/	if( o== 90+16 || o == 100 + 16 || o == 110+16 || o==120 + 16 || o== 130 + 16 
 				|| o == 140+16 || o == 150 + 16 || o == 160+16 || o == 170+16) {
 			fa[10]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F10);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F10);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[10];}
-		//Das Vorgehen bei agiler Softwareentwicklung,"Iterativ"
+		//Bestehendes Repository in git klonen:git ?,"clone"
 		if(o>=120+9&&o<=120+14) {
 			fa[11]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F11);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F11);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[11];}
-		//Anderes Wort fuer "Iteration",Sprint"
+		//Holt alle Aenderungen vom Origin:git ?,"fetch"
 		if( o == 40+9 || o == 50 + 9 || o== 60 +9  || o== 70+9 || o== 80 + 9) {
 			fa[12]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F12);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F12);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[12];}
-		//Der Product ? ist verantwortlich fuer den Product Backlog,"Owner"
+		//Sendet Aenderungen an entferntes Repository:git ?,"push"
 		if(o == 100+ 9 || o== 110 + 9 || o== 120 + 9 || o == 130 + 9 || o==140+9 || o == 150 +9) {
 			fa[13]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F13);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F13);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[13];}
-		//Der Scrum ? sorgt dafuer das Scrum richtig durchgesetzt wird,"Master"
+		//Datei in git umbennen:git ?,"mv"
 		if(o== 140 + 11 || o == 150 +11 || o==160+11 || o == 170 +11 || o == 180 +11 || o == 190 +11) {
 			fa[14]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F14);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F14);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[14];}
-		//Die taegliche Besprechung in Scrum "Daily ?",Standup"
+		//Uebersicht aller Daten die noch nicht in git gestaged wurden:git ?,"status"
 		if(o>=50+12&&o<=50+18) {
 			fa[15]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F15);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F15);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[15];}
-		//Liste von Dingen um das Produkt zu verbessern "Product ?","Backlog"
+		//Mit welcher Frucht kann man einzelne Commits in git einfuegen(englisch)","cherry"
 		if(o == 30 +17 || o == 40 +17 || o == 50+17 || o== 60 + 17 || o== 70 +17 || o==80 +17 || o==90+17 ) {
 			fa[16]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F16);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F16);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[16];}
-		//Idee von Kent Beck "User ?","Stories"
+		//Letzter Commit in Git wird Rueckgaengig gemacht:git ?","revert"
 		if(o>=170+9&&o<=170+14) {
 			fa[17]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F17);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F17);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[17];}
-		//Visualisierung und Beseitigung von Engpaessen ist die Kernidee von ?,"Kanban"
+		//Die drei Stufen von Git Reset:Mixed Soft und ?,"hard"
 		if(o == 40 +4 || o == 50 +4 || o== 60 +4 || o==70 +4 || o == 80+4 || o==90+4 || o==100+4) {
 			fa[18]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F18);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F18);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[18];}
-		//Eine statische Analyse des Quellcodes um Probleme zu entdecken,"Linting"
+		//Was funktioniert bei den meisten Wissenarbeitern nicht,"Hierachien"
 
 		if( o == 66 || o == 76 || o == 86 || o == 96 || o == 106 || o == 116 
 				|| o == 126 || o == 136 || o==146 || o == 156 || o == 166 || o == 176 || o == 186 || o == 196) {
 			fa[19]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F19);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F19);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[19];}
-		//Aktuelles Arbeitsverzeichnis,"Working Dierctory"
-
-
-		if(o>=70+2&&o<=70+14) {
-			fa[20]= (FocusAdapter) new FocusAdapter() {
-				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F20);}
-				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
-				return fa[20];}
-		//Letztes Meeting im Sprint "Sprint ?",Retrospective"
+		
 
 		return null;
 
