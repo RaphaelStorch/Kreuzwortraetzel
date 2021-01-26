@@ -226,6 +226,7 @@ public class Frameassistent{
 				tf[i][j].setColumns(10);
 				if(!(aw[i][j].equals(" "))) {
 					tf[i][j].addFocusListener(FragenAnzeiger.fragenMittel(i*10+j+1));
+					tf[i][j].addFocusListener(FragenAnzeiger.fragenEinfach(i*10+j+1));
 				}
 			}
 		}

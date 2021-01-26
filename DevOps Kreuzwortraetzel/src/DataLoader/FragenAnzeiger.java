@@ -270,39 +270,66 @@ public class FragenAnzeiger {
 
 
 	}
+	
+	static String einfachpath = "..\\DevOps Kreuzwortraetzel\\res\\database\\einfacheFragen.csv";
+	static String einfachline = ""; 
+	static String[][] einfachfragen= new String[30][2]; 
+	static String[] einfachvalues; 
+	public static String[][] geteinfachCSVFragen(){
+
+		int counter =0; 
+		int zeile=0; 
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(einfachpath));
+			while((einfachline = br.readLine())!= null) {
+				einfachvalues= einfachline.split(",");
+				einfachfragen[counter][0] = " "+counter +". "+ einfachvalues[0];
+				counter++;
+				System.out.println(counter);
+				System.out.println(einfachvalues[0]);
+				System.out.println(einfachfragen[counter][0]);
+			} 
+		}catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}catch(IOException e) {
+			e.printStackTrace();
+		}	
+
+		return einfachfragen;		
+	}
 
 	
 	
 	
-	
-	public static FocusAdapter fragenSchwer(int o) {
+	static String[][] SchwerFragen = geteinfachCSVFragen();
+	public static FocusAdapter fragenEinfach(int o) {
 		System.out.println("Reached");
 		FocusAdapter[] fa = new FocusAdapter[21]; 
 		int derzeit = o; 
 		int anfang = 0; 
 		int ende = 0; 
 		int frage = 1; 
-		final String F1 = fragen[1][0];
-		final String F2 = fragen[2][0];
-		final String F3 = fragen[3][0];
-		final String F4 = fragen[4][0];
-		final String F5 = fragen[5][0];
-		final String F6 = fragen[6][0];
-		final String F7 = fragen[7][0];
-		final String F8 = fragen[8][0];
-		final String F9 = fragen[9][0];
-		final String F10 = fragen[10][0];
-		final String F11 = fragen[11][0];
-		final String F12 = fragen[12][0];
-		final String F13 = fragen[13][0];
-		final String F14 = fragen[14][0];
-		final String F15 = fragen[15][0];
-		final String F16 = fragen[16][0];
-		final String F17 = fragen[17][0];
-		final String F18 = fragen[18][0];
-		final String F19 = fragen[19][0];
-		final String F20 = fragen[20][0];
-		final String F21 = fragen[21][0];
+		final String F1 = einfachfragen[1][0];
+		final String F2 = einfachfragen[2][0];
+		final String F3 = einfachfragen[3][0];
+		final String F4 = einfachfragen[4][0];
+		final String F5 = einfachfragen[5][0];
+		final String F6 = einfachfragen[6][0];
+		final String F7 = einfachfragen[7][0];
+		final String F8 = einfachfragen[8][0];
+		final String F9 = einfachfragen[9][0];
+		final String F10 = einfachfragen[10][0];
+		final String F11 = einfachfragen[11][0];
+		final String F12 = einfachfragen[12][0];
+		final String F13 = einfachfragen[13][0];
+		final String F14 = einfachfragen[14][0];
+		final String F15 = einfachfragen[15][0];
+		final String F16 = einfachfragen[16][0];
+		final String F17 = einfachfragen[17][0];
+		final String F18 = einfachfragen[18][0];
+		final String F19 = einfachfragen[19][0];
+		final String F20 = einfachfragen[20][0];
+		final String F21 = einfachfragen[21][0];
 
 		JTextField[][] tfcopy = Mittel.tf;
 
@@ -497,4 +524,5 @@ public class FragenAnzeiger {
 
 
 	}
+	
 }
