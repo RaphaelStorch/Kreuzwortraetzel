@@ -14,6 +14,7 @@ import javax.swing.JTextField;
 
 import JFrames.Einfach;
 import JFrames.Mittel;
+import JFrames.Schwer;
 
 public class FragenAnzeiger {
 
@@ -339,11 +340,9 @@ public class FragenAnzeiger {
 				@Override
 				public void focusGained(FocusEvent e) {
 					System.out.println(F1);
-					Einfach.fragefeld.setText(F1);
-				
-				}
+					Einfach.fragefeld.setText(F1);vertikaleReiheMarker(1609, 9, 1909, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();
 				
 				}};
 				return fa[1];}
@@ -352,11 +351,11 @@ public class FragenAnzeiger {
 			fa[2]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {
-					Einfach.fragefeld.setText(F2);
+					Einfach.fragefeld.setText(F2);horizontaleReiheMarker(405, 411, Color.yellow,e);
 					
 				}
 				@Override
-				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();
 				}
 				};
 				return fa[2];}
@@ -364,19 +363,19 @@ public class FragenAnzeiger {
 		if(o == 700 +12 || o == 800 + 12 || o== 900 +12 || o== 1000 +12|| o == 1100 + 12 || o== 1200 +12 || o== 1300 +12) {
 			fa[3]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F3);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F3);vertikaleReiheMarker(712, 12, 1312, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
 				return fa[3];}
 		//Wie lautet der Doppelname von Herrn Voth,"Viktor"
 		if(o>=1904 && o<=1909) {
 			fa[4]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F4);
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F4);horizontaleReiheMarker(1904, 1909, Color.yellow,e);
 				
 				}
 				@Override
-				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();
 				
 				}};
 				return fa[4];}
@@ -384,17 +383,17 @@ public class FragenAnzeiger {
 		if(o == 200 +10 || o == 300 + 10 || o== 400 +10 || o== 500 +10 || o == 600 +10 || o == 700 + 10 || o== 800 +10 || o== 100 +10) {
 			fa[5]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F5);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F5);vertikaleReiheMarker(110, 10, 810, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
 				return fa[5];}
 		//Multiple-Choice ?,"Test"
 		if( o == 800 +1 || o == 900 + 1 || o== 1000 +1 || o== 1100 +1  ) {
 			fa[6]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F6);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F6);vertikaleReiheMarker(801, 1, 1101, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
 				return fa[6];}
 
 
@@ -403,106 +402,106 @@ public class FragenAnzeiger {
 		if(o == 5 || o == 100 + 5 || o== 200 +5 || o== 300 +5|| o == 400 + 5 || o== 500 +5 ) {
 			fa[7]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F7);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F7);vertikaleReiheMarker(5, 5, 505, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
 				return fa[7];}
 		//VCS=Version Control ?,"System"
 		if(o>=107 && o<=112) {
 			fa[8]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F8);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F8);horizontaleReiheMarker(107, 112, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
 				return fa[8];}
 		//Initiert wurde Git von Linus ?,"Torvalds"
 		if(o>=1101 && o<=1108) {
 			fa[9]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F9);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F9);horizontaleReiheMarker(1101, 1108, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
 				return fa[9];}
 		//Neues Repository in Git anlegen:git ?,"init"
 		/*10*/	if( o>=502 && o<=505) {
 			fa[10]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F10);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F10);horizontaleReiheMarker(502, 505, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
 				return fa[10];}
 		//Bestehendes Repository in git klonen:git ?,"clone"
 		if(o>=301 && o<=305) {
 			fa[11]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F11);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F11);horizontaleReiheMarker(301, 305, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
 				return fa[11];}
 		//Holt alle Aenderungen vom Origin:git ?,"fetch"
 		if( o == 1200+10 || o == 1300 + 10 || o== 1400 +10  || o== 1500+10 || o== 1600 + 10) {
 			fa[12]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F12);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F12);vertikaleReiheMarker(1210, 10, 1610, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
 				return fa[12];}
 		//Sendet Aenderungen an entferntes Repository:git ?,"push"
 		if(o>=1607 && o<=1610) {
 			fa[13]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F13);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F13);horizontaleReiheMarker(1607, 1610, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
 				return fa[13];}
 		//Datei in git umbennen:git ?,"mv"
 		if(o>=1012 && o<=1013) {
 			fa[14]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F14);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F14);horizontaleReiheMarker(1012, 1013, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
 				return fa[14];}
 		//Uebersicht aller Daten die noch nicht in git gestaged wurden:git ?,"status"
 		if(o>=606 && o<=611) {
 			fa[15]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F15);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F15);horizontaleReiheMarker(606, 611, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
 				return fa[15];}
 		//Mit welcher Frucht kann man einzelne Commits in git einfuegen(englisch)","cherry"
 		if(o == 700 +3 || o == 800 +3 || o == 900+3 || o== 1000 + 3 || o== 1100 +3 || o==1200 +3 ) {
 			fa[16]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F16);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F16);vertikaleReiheMarker(703, 3, 1203, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
 				return fa[16];}
 		//Letzter Commit in Git wird Rueckgaengig gemacht:git ?","revert"
 		if(o>=1307 && o<=1312) {
 			fa[17]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F17);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F17);horizontaleReiheMarker(1307, 1312, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
 				return fa[17];}
 		//Die drei Stufen von Git Reset:Mixed Soft und ?,"hard"
 		if(o == 1000 +5 || o == 1100 +5 || o== 1200 +5 || o==1300 +5 ) {
 			fa[18]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F18);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F18);vertikaleReiheMarker(1005, 5, 1305, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
 				return fa[18];}
 		//Was funktioniert bei den meisten Wissenarbeitern nicht,"Hierachien"
 
 		if( o>=803 && o<=813) {
 			fa[19]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F19);}
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F19);horizontaleReiheMarker(803, 813, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
 				return fa[19];}
 		
 
@@ -511,5 +510,61 @@ public class FragenAnzeiger {
 
 
 	}
+	static Color vorFarbe = Color.white;
+    static int anfangszwischenspeicher = 0;
+    static int endezwischenspeicher = 0;
+    static int spaltezwischenspeicher = 0;
+    static FocusEvent focuszwischenspeicher;
+    static JTextField[][] tfzwischenspeicher=Mittel.tf;
+
+    static void findDifficulty(FocusEvent e) {
+        for(int x=0; x<19; x++) {
+            for(int y=0; y<20; y++) {
+        if(e.getSource().equals(Einfach.tf[x][y])) tfzwischenspeicher = Einfach.tf;
+        else if(e.getSource().equals(Mittel.tf[x][y])) tfzwischenspeicher = Mittel.tf;
+        else if(e.getSource().equals(Schwer.tf[x][y])) tfzwischenspeicher = Schwer.tf;
+            }}
+    }
+    static void resetColor() {
+        if (spaltezwischenspeicher == -1) {
+            if (vorFarbe.equals(Color.yellow))
+                vorFarbe = Color.white;
+            horizontaleReiheMarker(anfangszwischenspeicher, endezwischenspeicher, vorFarbe, focuszwischenspeicher);
+        } else {
+            vertikaleReiheMarker(anfangszwischenspeicher, spaltezwischenspeicher, endezwischenspeicher, vorFarbe, focuszwischenspeicher);
+        }
+    }
+
+    static void horizontaleReiheMarker(int anfang, int ende, Color farbe, FocusEvent e) {
+        anfangszwischenspeicher = anfang;
+        endezwischenspeicher = ende;
+        spaltezwischenspeicher = -1;
+        focuszwischenspeicher=e;
+        findDifficulty(e);
+
+        for (; anfang <= ende; anfang++) {
+            if (vorFarbe.equals(tfzwischenspeicher[anfang / 100][anfang % 100 - 1].getBackground())) {
+            } else {
+                vorFarbe = tfzwischenspeicher[anfang / 100][anfang % 100 - 1].getBackground();
+            }
+            tfzwischenspeicher[anfang / 100][anfang % 100 - 1].setBackground(farbe);
+        }
+    }
+
+    static void vertikaleReiheMarker(int anfang, int spalte, int ende, Color farbe, FocusEvent e) {
+        anfangszwischenspeicher = anfang;
+        endezwischenspeicher = ende;
+        spaltezwischenspeicher = spalte;
+        focuszwischenspeicher=e;
+        findDifficulty(e);
+
+        for (int i = anfang; anfang <= ende; anfang = anfang + 100) {
+            if (vorFarbe.equals(tfzwischenspeicher[anfang / 100][spalte - 1].getBackground())) {
+            } else {
+                vorFarbe = tfzwischenspeicher[anfang / 100][spalte - 1].getBackground();
+            }
+            tfzwischenspeicher[anfang / 100][spalte - 1].setBackground(farbe);
+        }
+    }
 	
 }
