@@ -488,6 +488,247 @@ public class FragenAnzeiger {
 
 
 	}
+	
+	static String einfachpath = "..\\DevOps Kreuzwortraetzel\\res\\database\\einfacheFragen.csv";
+	static String einfachline = ""; 
+	static String[][] einfachfragen= new String[30][2]; 
+	static String[] einfachvalues; 
+	public static String[][] geteinfachCSVFragen(){
+
+		int counter =0; 
+		int zeile=0; 
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(einfachpath));
+			while((einfachline = br.readLine())!= null) {
+				einfachvalues= einfachline.split(",");
+				einfachfragen[counter][0] = " "+counter +". "+ einfachvalues[0];
+				counter++;
+				System.out.println(counter);
+				System.out.println(einfachvalues[0]);
+				System.out.println(einfachfragen[counter][0]);
+			} 
+		}catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}catch(IOException e) {
+			e.printStackTrace();
+		}	
+
+		return einfachfragen;		
+	}
+
+	
+	
+	
+	static String[][] einfachFragen = geteinfachCSVFragen();
+	public static FocusAdapter fragenEinfach(int o) {
+		System.out.println("Reached");
+		FocusAdapter[] fa = new FocusAdapter[21]; 
+		int derzeit = o; 
+		int anfang = 0; 
+		int ende = 0; 
+		int frage = 1; 
+		final String F1 = einfachfragen[1][0];
+		final String F2 = einfachfragen[2][0];
+		final String F3 = einfachfragen[3][0];
+		final String F4 = einfachfragen[4][0];
+		final String F5 = einfachfragen[5][0];
+		final String F6 = einfachfragen[6][0];
+		final String F7 = einfachfragen[7][0];
+		final String F8 = einfachfragen[8][0];
+		final String F9 = einfachfragen[9][0];
+		final String F10 = einfachfragen[10][0];
+		final String F11 = einfachfragen[11][0];
+		final String F12 = einfachfragen[12][0];
+		final String F13 = einfachfragen[13][0];
+		final String F14 = einfachfragen[14][0];
+		final String F15 = einfachfragen[15][0];
+		final String F16 = einfachfragen[16][0];
+		final String F17 = einfachfragen[17][0];
+		final String F18 = einfachfragen[18][0];
+		final String F19 = einfachfragen[19][0];
+		final String F20 = einfachfragen[20][0];
+		final String F21 = einfachfragen[21][0];
+
+
+		//Wie heisst das Team dass das Spiel erstellt hat?,"Star" (>=3&&<=9)
+		if( o == 1600 +9 || o == 1700 + 9 || o== 1800 +9 || o== 1900 +9 ){
+			fa[1]= (FocusAdapter) new FocusAdapter() {
+				@Override
+				public void focusGained(FocusEvent e) {
+					System.out.println(F1);
+					Einfach.fragefeld.setText(F1);vertikaleReiheMarker(1609, 9, 1909, Color.yellow,e);}
+				@Override
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();
+				
+				}};
+				return fa[1];}
+		//Wie heisst Herr Storch mit Vornamen?,"Raphael"
+		if(o>=405 && o<=411) {
+			fa[2]= (FocusAdapter) new FocusAdapter() {
+				@Override
+				public void focusGained(FocusEvent e) {
+					Einfach.fragefeld.setText(F2);horizontaleReiheMarker(405, 411, Color.yellow,e);
+					
+				}
+				@Override
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();
+				}
+				};
+				return fa[2];}
+		//Wie heisst Gufran mit Nachnamen?,"Oezmert"
+		if(o == 700 +12 || o == 800 + 12 || o== 900 +12 || o== 1000 +12|| o == 1100 + 12 || o== 1200 +12 || o== 1300 +12) {
+			fa[3]= (FocusAdapter) new FocusAdapter() {
+				@Override
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F3);vertikaleReiheMarker(712, 12, 1312, Color.yellow,e);}
+				@Override
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
+				return fa[3];}
+		//Wie lautet der Doppelname von Herrn Voth,"Viktor"
+		if(o>=1904 && o<=1909) {
+			fa[4]= (FocusAdapter) new FocusAdapter() {
+				@Override
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F4);horizontaleReiheMarker(1904, 1909, Color.yellow,e);
+				
+				}
+				@Override
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();
+				
+				}};
+				return fa[4];}
+		//Was brauchte ein Eintrag pro Vorlesung?,"Tagebuch"
+		if(o == 200 +10 || o == 300 + 10 || o== 400 +10 || o== 500 +10 || o == 600 +10 || o == 700 + 10 || o== 800 +10 || o== 100 +10) {
+			fa[5]= (FocusAdapter) new FocusAdapter() {
+				@Override
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F5);vertikaleReiheMarker(110, 10, 810, Color.yellow,e);}
+				@Override
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
+				return fa[5];}
+		//Multiple-Choice ?,"Test"
+		if( o == 800 +1 || o == 900 + 1 || o== 1000 +1 || o== 1100 +1  ) {
+			fa[6]= (FocusAdapter) new FocusAdapter() {
+				@Override
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F6);vertikaleReiheMarker(801, 1, 1101, Color.yellow,e);}
+				@Override
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
+				return fa[6];}
+
+
+
+		//VIM: Command Mode Visual Mode und ? Mode,"Insert" 	
+		if(o == 5 || o == 100 + 5 || o== 200 +5 || o== 300 +5|| o == 400 + 5 || o== 500 +5 ) {
+			fa[7]= (FocusAdapter) new FocusAdapter() {
+				@Override
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F7);vertikaleReiheMarker(5, 5, 505, Color.yellow,e);}
+				@Override
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
+				return fa[7];}
+		//VCS=Version Control ?,"System"
+		if(o>=107 && o<=112) {
+			fa[8]= (FocusAdapter) new FocusAdapter() {
+				@Override
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F8);horizontaleReiheMarker(107, 112, Color.yellow,e);}
+				@Override
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
+				return fa[8];}
+		//Initiert wurde Git von Linus ?,"Torvalds"
+		if(o>=1101 && o<=1108) {
+			fa[9]= (FocusAdapter) new FocusAdapter() {
+				@Override
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F9);horizontaleReiheMarker(1101, 1108, Color.yellow,e);}
+				@Override
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
+				return fa[9];}
+		//Neues Repository in Git anlegen:git ?,"init"
+		/*10*/	if( o>=502 && o<=505) {
+			fa[10]= (FocusAdapter) new FocusAdapter() {
+				@Override
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F10);horizontaleReiheMarker(502, 505, Color.yellow,e);}
+				@Override
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
+				return fa[10];}
+		//Bestehendes Repository in git klonen:git ?,"clone"
+		if(o>=301 && o<=305) {
+			fa[11]= (FocusAdapter) new FocusAdapter() {
+				@Override
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F11);horizontaleReiheMarker(301, 305, Color.yellow,e);}
+				@Override
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
+				return fa[11];}
+		//Holt alle Aenderungen vom Origin:git ?,"fetch"
+		if( o == 1200+10 || o == 1300 + 10 || o== 1400 +10  || o== 1500+10 || o== 1600 + 10) {
+			fa[12]= (FocusAdapter) new FocusAdapter() {
+				@Override
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F12);vertikaleReiheMarker(1210, 10, 1610, Color.yellow,e);}
+				@Override
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
+				return fa[12];}
+		//Sendet Aenderungen an entferntes Repository:git ?,"push"
+		if(o>=1607 && o<=1610) {
+			fa[13]= (FocusAdapter) new FocusAdapter() {
+				@Override
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F13);horizontaleReiheMarker(1607, 1610, Color.yellow,e);}
+				@Override
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
+				return fa[13];}
+		//Datei in git umbennen:git ?,"mv"
+		if(o>=1012 && o<=1013) {
+			fa[14]= (FocusAdapter) new FocusAdapter() {
+				@Override
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F14);horizontaleReiheMarker(1012, 1013, Color.yellow,e);}
+				@Override
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
+				return fa[14];}
+		//Uebersicht aller Daten die noch nicht in git gestaged wurden:git ?,"status"
+		if(o>=606 && o<=611) {
+			fa[15]= (FocusAdapter) new FocusAdapter() {
+				@Override
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F15);horizontaleReiheMarker(606, 611, Color.yellow,e);}
+				@Override
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
+				return fa[15];}
+		//Mit welcher Frucht kann man einzelne Commits in git einfuegen(englisch)","cherry"
+		if(o == 700 +3 || o == 800 +3 || o == 900+3 || o== 1000 + 3 || o== 1100 +3 || o==1200 +3 ) {
+			fa[16]= (FocusAdapter) new FocusAdapter() {
+				@Override
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F16);vertikaleReiheMarker(703, 3, 1203, Color.yellow,e);}
+				@Override
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
+				return fa[16];}
+		//Letzter Commit in Git wird Rueckgaengig gemacht:git ?","revert"
+		if(o>=1307 && o<=1312) {
+			fa[17]= (FocusAdapter) new FocusAdapter() {
+				@Override
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F17);horizontaleReiheMarker(1307, 1312, Color.yellow,e);}
+				@Override
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
+				return fa[17];}
+		//Die drei Stufen von Git Reset:Mixed Soft und ?,"hard"
+		if(o == 1000 +5 || o == 1100 +5 || o== 1200 +5 || o==1300 +5 ) {
+			fa[18]= (FocusAdapter) new FocusAdapter() {
+				@Override
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F18);vertikaleReiheMarker(1005, 5, 1305, Color.yellow,e);}
+				@Override
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
+				return fa[18];}
+		//Was funktioniert bei den meisten Wissenarbeitern nicht,"Hierachien"
+
+		if( o>=803 && o<=813) {
+			fa[19]= (FocusAdapter) new FocusAdapter() {
+				@Override
+				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F19);horizontaleReiheMarker(803, 813, Color.yellow,e);}
+				@Override
+				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");resetColor();}};
+				return fa[19];}
+		
+
+		return null;
+
+
+
+	}
+	
+	
+	
 	static Color vorFarbe = Color.white;
     static int anfangszwischenspeicher = 0;
     static int endezwischenspeicher = 0;
@@ -545,7 +786,3 @@ public class FragenAnzeiger {
         }
     }
 }
-
-
-
-
