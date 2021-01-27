@@ -82,68 +82,53 @@ public class FragenAnzeiger {
 		JTextField[][] tfcopy = Mittel.tf;
 
 		//Verschmelzung von zwei Dateien,"Merge" (o>=3&&o<=9)
-		if(o == 7 || o == 107 || o == 207 || o == 307 || o == 407){
+		if(o == 7 || o == 100+7 || o == 200+7 || o == 300+7 || o == 400+7){
 			fa[1]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {
-					System.out.println(F1);
-					Mittel.fragefeld.setText(F1);
-					for(int i = 7; i<=47; i=i+10)Mittel.tf[i/10][7-1].setBackground(Color.yellow);
-				}
+				public void focusGained(FocusEvent e) {;Mittel.fragefeld.setText(F1);vertikaleReiheMarker(7,7,407, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");
-				for(int i = 7; i<=47; i=i+10)Mittel.tf[i/10][7-1].setBackground(Color.white);
-				}};
+				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");resetColor();}};
 				return fa[1];}
 		//Wenn man ein neues Verzeichnis in git haben möchte,"mkdir"
 		if(o>=1403 && o<=1407) {
 			fa[2]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {
-					Mittel.fragefeld.setText(F2);
-					//for(int i = 0; i<=4; i++)Mittel.tf[153/10-1][153%10+i].setBackground(Color.yellow);
-				}
+				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F2);horizontaleReiheMarker(1403, 1407, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");
-				for(int i = 0; i<=4; i++)Mittel.tf[153/10-1][153%10+i].setBackground(Color.white);}
-				};
+				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");resetColor();}};
 				return fa[2];}
 		//Befehl zum Anlegen einer Datei in git,"echo"
 		if(o>=1903&&o<=1906) {
 			fa[3]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F3);}
+				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F3);horizontaleReiheMarker(1903, 1906, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");resetColor();}};
 				return fa[3];}
 		//Ein gespeicherter Zwischenstand,"Commit"
 		if(o>=4&&o<=9) {
 			fa[4]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F4);
-				for(int i = 0; i<6; i++)Mittel.tf[4/10][4%10+i-1].setBackground(Color.yellow);
-				}
+				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F4);horizontaleReiheMarker(4, 9, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");
-				for(int i = 0; i<6; i++)Mittel.tf[4/10][4%10+i-1].setBackground(Color.white);
-				}};
+				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");resetColor();}};
 				return fa[4];}
 		//Frueherer in Git: "Master",Main"
 		if(o>=1009&&o<=1012) {
 			fa[5]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F5);}
+				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F5);horizontaleReiheMarker(1009, 1012, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");resetColor();}};
 				return fa[5];}
 		//Mit git ? wechselt man zu einem anderen Branch,"checkout"
 		if( o == 600 +14 || o == 700 + 14 || o== 800 +14 || o== 900 +14 
 				|| o == 900 +14 || o==1000+14 || o == 1100 +14 || o==1200+14 || o==1300+14 ) {
 			fa[6]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F6);}
+				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F6);vertikaleReiheMarker(614,14,1314, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");resetColor();}};
 				return fa[6];}
 
 
@@ -152,98 +137,98 @@ public class FragenAnzeiger {
 		if(o>=1000 + 2 &&o<=1000 +7 ) {
 			fa[7]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F7);}
+				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F7);horizontaleReiheMarker(1002, 1007, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");resetColor();}};
 				return fa[7];}
 		//Fehler in einem Code beheben,"Bugfix"
 		if(o>=400+3&&o<=400+7) {
 			fa[8]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F8);}
+				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F8);horizontaleReiheMarker(403, 407, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");resetColor();}};
 				return fa[8];}
 		//Befehl: Wer hat welchen Commit gemacht,"blame"
 		if(o>=200+2&&o<=200+11) {
 			fa[9]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F9);}
+				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F9);horizontaleReiheMarker(202, 211, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");resetColor();}};
 				return fa[9];}
 		//Modell zu einer nicht agilen Softwareentwicklung,"Wasserfall"
 		/*10*/	if( o== 900+16 || o == 1000 + 16 || o == 1100+16 || o==1200 + 16 || o== 1300 + 16 
 				|| o == 1400+16 || o == 1500 + 16 || o == 1600+16 || o == 1700+16) {
 			fa[10]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F10);}
+				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F10);vertikaleReiheMarker(916,16,1716, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");resetColor();}};
 				return fa[10];}
 		//Das Vorgehen bei agiler Softwareentwicklung,"Iterativ"
 		if(o>=1200+9&&o<=1200+14) {
 			fa[11]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F11);}
+				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F11);horizontaleReiheMarker(1209, 1214, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");resetColor();}};
 				return fa[11];}
 		//Anderes Wort fuer "Iteration",Sprint"
 		if( o == 400+9 || o == 500 + 9 || o== 600 +9  || o== 700+9 || o== 800 + 9) {
 			fa[12]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F12);}
+				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F12);vertikaleReiheMarker(409,9,809, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");resetColor();}};
 				return fa[12];}
 		//Der Product ? ist verantwortlich fuer den Product Backlog,"Owner"
 		if(o == 1000+ 9 || o== 1100 + 9 || o== 1200 + 9 || o == 1300 + 9 || o==1400+9 || o == 1500 +9) {
 			fa[13]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F13);}
+				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F13);vertikaleReiheMarker(1009,9,1509, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");resetColor();}};
 				return fa[13];}
 		//Der Scrum ? sorgt dafuer das Scrum richtig durchgesetzt wird,"Master"
 		if(o== 1400 + 11 || o == 1500 +11 || o==1600+11 || o == 1700 +11 || o == 1800 +11 || o == 1900 +11 || o == 2000 + 11) {
 			fa[14]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F14);}
+				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F14);vertikaleReiheMarker(1411,11,2011, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");resetColor();}};
 				return fa[14];}
 		//Die taegliche Besprechung in Scrum "Daily ?",Standup"
 		if(o>=500+12&&o<=500+18) {
 			fa[15]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F15);}
+				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F15);horizontaleReiheMarker(512, 518, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");resetColor();}};
 				return fa[15];}
 		//Liste von Dingen um das Produkt zu verbessern "Product ?","Backlog"
 		if(o == 300 +17 || o == 400 +17 || o == 500+17 || o== 600 + 17 || o== 700 +17 || o==800 +17 || o==900+17 ) {
 			fa[16]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F16);}
+				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F16);vertikaleReiheMarker(317,17,917, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");resetColor();}};
 				return fa[16];}
 		//Idee von Kent Beck "User ?","Stories"
 		if(o>=1700+9&&o<=1700+14) {
 			fa[17]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F17);}
+				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F17);horizontaleReiheMarker(1709, 1714, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");resetColor();}};
 				return fa[17];}
 		//Visualisierung und Beseitigung von Engpaessen ist die Kernidee von ?,"Kanban"
 		if(o == 400 +4 || o == 500 +4 || o== 600 +4 || o==700 +4 || o == 800+4 || o==900+4 || o==1000+4) {
 			fa[18]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F18);}
+				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F18);vertikaleReiheMarker(404,4,1004, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");resetColor();}};
 				return fa[18];}
 		//Eine statische Analyse des Quellcodes um Probleme zu entdecken,"Linting"
 
@@ -251,9 +236,9 @@ public class FragenAnzeiger {
 				|| o == 1200+6 || o == 1300+6 || o==1400+6 || o == 1500+6 || o == 1600+6 || o == 1700+6 || o == 1800+6 || o == 1900+6 || o == 2000 + 6) {
 			fa[19]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F19);}
+				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F19);vertikaleReiheMarker(606,6,2006, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");resetColor();}};
 				return fa[19];}
 		//Aktuelles Arbeitsverzeichnis,"Working Directory"
 
@@ -261,9 +246,9 @@ public class FragenAnzeiger {
 		if(o>=700+2&&o<=700+14) {
 			fa[20]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F20);}
+				public void focusGained(FocusEvent e) {Mittel.fragefeld.setText(F20);horizontaleReiheMarker(702, 714, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Mittel.fragefeld.setText("");resetColor();}};
 				return fa[20];}
 		//Letztes Meeting im Sprint "Sprint ?",Retrospective"
 
