@@ -16,8 +16,8 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
 
-import Logik.Main;
 import MusicLoader.Musicloader;
+import logic.Main;
 
 //import Logik.StartBildschirm;
 //import Ressources.PicLoader;

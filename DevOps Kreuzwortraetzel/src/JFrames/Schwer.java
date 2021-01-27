@@ -9,7 +9,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import DataLoader.Database;
-import Logik.TestButton;
+import logic.TestButton;
 
 public class Schwer extends JFrame {
 

@@ -37,8 +37,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
 import DataLoader.FragenAnzeiger;
-import Logik.Main;
-import Logik.TestButton;
+import logic.Main;
+import logic.TestButton;
 
 
 

@@ -1,4 +1,4 @@
-package Logik;
+package logic;
 
 import JFrames.Tutorial;
 
