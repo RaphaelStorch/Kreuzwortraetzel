@@ -302,7 +302,7 @@ public class FragenAnzeiger {
 	
 	
 	
-	static String[][] SchwerFragen = geteinfachCSVFragen();
+	static String[][] einfachFragen = geteinfachCSVFragen();
 	public static FocusAdapter fragenEinfach(int o) {
 		System.out.println("Reached");
 		FocusAdapter[] fa = new FocusAdapter[21]; 
@@ -334,7 +334,7 @@ public class FragenAnzeiger {
 
 
 		//Wie heisst das Team dass das Spiel erstellt hat?,"Star" (>=3&&<=9)
-		if(o == 7 || o == 17 || o == 27 || o == 37 || o == 47){
+		if( o == 1600 +9 || o == 1700 + 9 || o== 1800 +9 || o== 1900 +9 ){
 			fa[1]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {
@@ -348,7 +348,7 @@ public class FragenAnzeiger {
 				}};
 				return fa[1];}
 		//Wie heisst Herr Storch mit Vornamen?,"Raphael"
-		if(o>=153 && o<=157) {
+		if(o>=405 && o<=411) {
 			fa[2]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {
@@ -361,7 +361,7 @@ public class FragenAnzeiger {
 				};
 				return fa[2];}
 		//Wie heisst Gufran mit Nachnamen?,"Oezmert"
-		if(o>=203&&o<=206) {
+		if(o == 700 +12 || o == 800 + 12 || o== 900 +12 || o== 1000 +12|| o == 1100 + 12 || o== 1200 +12 || o== 1300 +12) {
 			fa[3]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F3);}
@@ -369,7 +369,7 @@ public class FragenAnzeiger {
 				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[3];}
 		//Wie lautet der Doppelname von Herrn Voth,"Viktor"
-		if(o>=4&&o<=9) {
+		if(o>=1904 && o<=1909) {
 			fa[4]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F4);
@@ -381,7 +381,7 @@ public class FragenAnzeiger {
 				}};
 				return fa[4];}
 		//Was brauchte ein Eintrag pro Vorlesung?,"Tagebuch"
-		if(o>=109&&o<=112) {
+		if(o == 200 +10 || o == 300 + 10 || o== 400 +10 || o== 500 +10 || o == 600 +10 || o == 700 + 10 || o== 800 +10 || o== 100 +10) {
 			fa[5]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F5);}
@@ -389,8 +389,7 @@ public class FragenAnzeiger {
 				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[5];}
 		//Multiple-Choice ?,"Test"
-		if( o == 60 +14 || o == 70 + 14 || o== 80 +14 || o== 90 +14 
-				|| o == 90 +14 || o==100+14 || o == 110 +14 || o==120+14 || o==130+14 ) {
+		if( o == 800 +1 || o == 900 + 1 || o== 1000 +1 || o== 1100 +1  ) {
 			fa[6]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F6);}
@@ -401,7 +400,7 @@ public class FragenAnzeiger {
 
 
 		//VIM: Command Mode Visual Mode und ? Mode,"Insert" 	
-		if(o>=110 + 2 &&o<=110 +7 ) {
+		if(o == 5 || o == 100 + 5 || o== 200 +5 || o== 300 +5|| o == 400 + 5 || o== 500 +5 ) {
 			fa[7]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F7);}
@@ -409,7 +408,7 @@ public class FragenAnzeiger {
 				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[7];}
 		//VCS=Version Control ?,"System"
-		if(o>=40+3&&o<=40+7) {
+		if(o>=107 && o<=112) {
 			fa[8]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F8);}
@@ -417,7 +416,7 @@ public class FragenAnzeiger {
 				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[8];}
 		//Initiert wurde Git von Linus ?,"Torvalds"
-		if(o>=20+2&&o<=20+11) {
+		if(o>=1101 && o<=1108) {
 			fa[9]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F9);}
@@ -425,8 +424,7 @@ public class FragenAnzeiger {
 				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[9];}
 		//Neues Repository in Git anlegen:git ?,"init"
-		/*10*/	if( o== 90+16 || o == 100 + 16 || o == 110+16 || o==120 + 16 || o== 130 + 16 
-				|| o == 140+16 || o == 150 + 16 || o == 160+16 || o == 170+16) {
+		/*10*/	if( o>=502 && o<=505) {
 			fa[10]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F10);}
@@ -434,7 +432,7 @@ public class FragenAnzeiger {
 				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[10];}
 		//Bestehendes Repository in git klonen:git ?,"clone"
-		if(o>=120+9&&o<=120+14) {
+		if(o>=301 && o<=305) {
 			fa[11]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F11);}
@@ -442,7 +440,7 @@ public class FragenAnzeiger {
 				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[11];}
 		//Holt alle Aenderungen vom Origin:git ?,"fetch"
-		if( o == 40+9 || o == 50 + 9 || o== 60 +9  || o== 70+9 || o== 80 + 9) {
+		if( o == 1200+10 || o == 1300 + 10 || o== 1400 +10  || o== 1500+10 || o== 1600 + 10) {
 			fa[12]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F12);}
@@ -450,7 +448,7 @@ public class FragenAnzeiger {
 				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[12];}
 		//Sendet Aenderungen an entferntes Repository:git ?,"push"
-		if(o == 100+ 9 || o== 110 + 9 || o== 120 + 9 || o == 130 + 9 || o==140+9 || o == 150 +9) {
+		if(o>=1607 && o<=1610) {
 			fa[13]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F13);}
@@ -458,7 +456,7 @@ public class FragenAnzeiger {
 				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[13];}
 		//Datei in git umbennen:git ?,"mv"
-		if(o== 140 + 11 || o == 150 +11 || o==160+11 || o == 170 +11 || o == 180 +11 || o == 190 +11) {
+		if(o>=1012 && o<=1013) {
 			fa[14]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F14);}
@@ -466,7 +464,7 @@ public class FragenAnzeiger {
 				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[14];}
 		//Uebersicht aller Daten die noch nicht in git gestaged wurden:git ?,"status"
-		if(o>=50+12&&o<=50+18) {
+		if(o>=606 && o<=611) {
 			fa[15]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F15);}
@@ -474,7 +472,7 @@ public class FragenAnzeiger {
 				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[15];}
 		//Mit welcher Frucht kann man einzelne Commits in git einfuegen(englisch)","cherry"
-		if(o == 30 +17 || o == 40 +17 || o == 50+17 || o== 60 + 17 || o== 70 +17 || o==80 +17 || o==90+17 ) {
+		if(o == 700 +3 || o == 800 +3 || o == 900+3 || o== 1000 + 3 || o== 1100 +3 || o==1200 +3 ) {
 			fa[16]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F16);}
@@ -482,7 +480,7 @@ public class FragenAnzeiger {
 				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[16];}
 		//Letzter Commit in Git wird Rueckgaengig gemacht:git ?","revert"
-		if(o>=170+9&&o<=170+14) {
+		if(o>=1307 && o<=1312) {
 			fa[17]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F17);}
@@ -490,7 +488,7 @@ public class FragenAnzeiger {
 				public void focusLost(FocusEvent e) {Einfach.fragefeld.setText("");}};
 				return fa[17];}
 		//Die drei Stufen von Git Reset:Mixed Soft und ?,"hard"
-		if(o == 40 +4 || o == 50 +4 || o== 60 +4 || o==70 +4 || o == 80+4 || o==90+4 || o==100+4) {
+		if(o == 1000 +5 || o == 1100 +5 || o== 1200 +5 || o==1300 +5 ) {
 			fa[18]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F18);}
@@ -499,8 +497,7 @@ public class FragenAnzeiger {
 				return fa[18];}
 		//Was funktioniert bei den meisten Wissenarbeitern nicht,"Hierachien"
 
-		if( o == 66 || o == 76 || o == 86 || o == 96 || o == 106 || o == 116 
-				|| o == 126 || o == 136 || o==146 || o == 156 || o == 166 || o == 176 || o == 186 || o == 196) {
+		if( o>=803 && o<=813) {
 			fa[19]= (FocusAdapter) new FocusAdapter() {
 				@Override
 				public void focusGained(FocusEvent e) {Einfach.fragefeld.setText(F19);}
