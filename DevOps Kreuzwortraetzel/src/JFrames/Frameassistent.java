@@ -222,9 +222,11 @@ public class Frameassistent{
 				if(aw[i][j].equals(" ")) {tf[i][j].setBackground(Color.black);
 				tf[i][j].setEditable(false);
 				tf[i][j].setBorder(null);contentPane.remove(tf[i][j]);
+				tf[i][j].setBackground(Color.white);
 				}
 				tf[i][j].setColumns(10);
 				if(!(aw[i][j].equals(" "))) {
+					tf[i][j].addFocusListener(FragenAnzeiger.fragenMittel(i*100+j+1));
 					tf[i][j].addFocusListener(FragenAnzeiger.fragenSchwer(i*100+j+1));
 				}
 			}

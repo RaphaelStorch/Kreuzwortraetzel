@@ -12,6 +12,7 @@ import java.io.IOException;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import JFrames.Einfach;
 import JFrames.Mittel;
 import JFrames.Schwer;
 
@@ -337,67 +338,53 @@ public class FragenAnzeiger {
 		JTextField[][] tfcopy = Schwer.tf;
 
 		//"Der Inhalt eines Computer-Programms","Code"
-		if(o == 906 || o == 907 || o == 908 || o == 909){
+		if(o>=906 && o<=909){
 			fa[1]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {
-					System.out.println(F1);
-					Schwer.fragefeld.setText(F1);
-					for(int i = 7; i<=47; i=i+10)Schwer.tf[i/10][7-1].setBackground(Color.yellow);
-				}
+				public void focusGained(FocusEvent e) {;Schwer.fragefeld.setText(F1);horizontaleReiheMarker(906, 909, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");
-				for(int i = 7; i<=47; i=i+10)Schwer.tf[i/10][7-1].setBackground(Color.white);
-				}};
+				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");resetColor();}};
 				return fa[1];}
 		//"Eine valide Möglichkeit Code Qualität zu bestimmen","Wtfs/Minute"
 		if(o>=703 && o<=714) {
 			fa[2]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {
-					Schwer.fragefeld.setText(F2);
-					for(int i = 0; i<=4; i++)Schwer.tf[153/10-1][153%10+i].setBackground(Color.yellow);
-				}
+				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F2);horizontaleReiheMarker(703, 714, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");
-				for(int i = 0; i<=4; i++)Schwer.tf[153/10-1][153%10+i].setBackground(Color.white);}
+				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");resetColor();}
 				};
 				return fa[2];}
 		//"Eine spezielle Funktion eine Software","Feature"
 		if(o == 100 +14 || o == 200 + 14 || o== 300 +14 || o== 400 +14 || o == 500 +14 || o==500+14 || o == 600 +14 ) {
 			fa[3]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F3);}
+				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F3);vertikaleReiheMarker(114,14,714, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");resetColor();}};
 				return fa[3];}
 		//"Wie bezeichnet man einen Code der gut geschrieben ist?","Clean"
 		if(o == 1000 +6 || o == 1100 + 6 || o== 1200 +6 || o== 1300 +6) {
 			fa[4]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F4);
-				for(int i = 0; i<6; i++)Schwer.tf[4/10][4%10+i-1].setBackground(Color.yellow);
-				}
+				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F4);vertikaleReiheMarker(906,6,1306, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");
-				for(int i = 0; i<6; i++)Schwer.tf[4/10][4%10+i-1].setBackground(Color.white);
-				}};
+				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");resetColor();}};
 				return fa[4];}
 		//"Wichtig in der Programmierung dass jeder Mensch bekommen hat","Namen"
 		if(o == 0 +16 || o == 100 + 16 || o== 200 +16 || o== 300 +16 || o== 400 +16) {
 			fa[5]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F5);}
+				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F5);vertikaleReiheMarker(16,16,416, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");resetColor();}};
 				return fa[5];}
 		//"Ein Unterprogramm in der objektorientierten Programmierung","Methode"
 		if( o>=1608 &&o<=1615 ) {
 			fa[6]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F6);}
+				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F6);horizontaleReiheMarker(1608, 1615, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");resetColor();}};
 				return fa[6];}
 
 
@@ -406,108 +393,108 @@ public class FragenAnzeiger {
 		if(o == 1600 +13 || o == 1700 + 13 || o== 1800 +13 ) {
 			fa[7]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F7);}
+				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F7);vertikaleReiheMarker(1613,13,1813, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");resetColor();}};
 				return fa[7];}
 		//"Häufiger Fehler, der durch Copy+Paste ausgelöst werden kann","DRY"
 		if(o == 500 +9 || o == 600 + 9 || o== 700 +9 || o == 800 +9 || o == 900 + 9 || o== 1000 +9 
 				|| o == 1100 +9 || o == 1200 + 9 || o== 1300 +9 ) {
 			fa[8]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F8);}
+				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F8);vertikaleReiheMarker(509,9,1309, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");resetColor();}};
 				return fa[8];}
 		//"Eine Erklärung im Code eines Programmes","Kommentar"
 		if(o>=1102 &&o<=1106) {
 			fa[9]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F9);}
+				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F9);horizontaleReiheMarker(1102, 1106, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");resetColor();}};
 				return fa[9];}
 		//"Ein besonderer Kommentar neben TODO","FIXME"
 		/*10*/	if( o == 900 +14 || o == 1000 + 14 || o== 1100 +14 || o == 1200 +14 || o == 1300 + 14 || o== 1400 +14 
 				|| o == 1500 +14 || o == 1600 + 14) {
 			fa[10]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F10);}
+				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F10);vertikaleReiheMarker(914,14,1614, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");resetColor();}};
 				return fa[10];}
 		//"Ein Platzhalter für eine Grö0ße die einem Rechenprozess Auftritt","Variable"
 		if(o>=311&&o<=317) {
 			fa[11]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F11);}
+				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F11);horizontaleReiheMarker(311, 317, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");resetColor();}};
 				return fa[11];}
 		//"Eine neue Version einer Software","Update"
 		if( o>=15&&o<=18) {
 			fa[12]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F12);}
+				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F12);horizontaleReiheMarker(15, 18, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");resetColor();}};
 				return fa[12];}
 		//"Wie nennt man den Test, wo Einzelteile eines Programmes getestet werden?","Unit"
 		if(o>=1109&&o<=1111) {
 			fa[13]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F13);}
+				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F13);horizontaleReiheMarker(1109, 1111, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");resetColor();}};
 				return fa[13];}
 		//"Welche Endung braucht eine Textdatei","Txt"
 		if(o== 300 + 5 || o == 400 +5 || o==500+5 || o == 600 +5 || o == 700 +5) {
 			fa[14]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F14);}
+				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F14);vertikaleReiheMarker(305,5,705, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");resetColor();}};
 				return fa[14];}
 		//"Das Satzzeichen womit Dateien in git ignoriert werden","Punkt"
 		if(o>=1211&&o<=1215) {
 			fa[15]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F15);}
+				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F15);horizontaleReiheMarker(1211, 1215, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");resetColor();}};
 				return fa[15];}
 		//"Wenn man sich bei einer Website anmelden möchte","Log in"
 		if(o == 900 +11 || o == 1000 +11 || o == 1100+11 || o== 1200 + 11 || o== 1300 +11 || o==1400 +11 ) {
 			fa[16]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F16);}
+				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F16);vertikaleReiheMarker(911,11,1411, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");resetColor();}};
 				return fa[16];}
 		//"Die Hochschul Fulda version von GitHub","GitLab"
 		if(o == 3 || o == 100 +3 || o == 200+3 || o== 300 + 3 || o== 400 +3 || o==500 +3 ) {
 			fa[17]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F17);}
+				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F17);vertikaleReiheMarker(3,3,503, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");resetColor();}};
 				return fa[17];}
 		//"In Git werden neue Features in einem neuen ? entwickelt","Branch"
 		if(o>=509&&o<=512) {
 			fa[18]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F18);hor(o, e, 509, 512, Color.yellow);}
+				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F18);horizontaleReiheMarker(509, 512, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");hor(o, e, 509, 512, Color.white);}};
+				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");resetColor();}};
 				return fa[18];}
-		//"Ein Prinzip was zu einem Problem eine möglichst einfache Lösung anstrebt","KISS"
+		//"Ein Prinzip um ein Problem möglichst einfach tu Lösen","KISS"
 
 		if(o>=402&&o<=406) {
 			fa[19]= (FocusAdapter) new FocusAdapter() {
 				@Override
-				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F19);}
+				public void focusGained(FocusEvent e) {Schwer.fragefeld.setText(F19);horizontaleReiheMarker(402, 406, Color.yellow,e);}
 				@Override
-				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");}};
+				public void focusLost(FocusEvent e) {Schwer.fragefeld.setText("");resetColor();}};
 				return fa[19];}
 		//"Das bekannteste Rahmenwerk der Agilen Softwareentwicklung","Scrum"
 
@@ -516,15 +503,62 @@ public class FragenAnzeiger {
 
 
 	}
-
-	static void hor(int o, FocusEvent event, int a, int e, Color farbe){
-        for(int i = a; a<=e; a++) {
-            System.out.println("ERREICHT");
-            Schwer.tf[a/100][a%100-1].setBackground(farbe);
+	static Color vorFarbe = Color.white;
+    static int anfangszwischenspeicher = 0;
+    static int endezwischenspeicher = 0;
+    static int spaltezwischenspeicher = 0;
+    static FocusEvent focuszwischenspeicher;
+    static JTextField[][] tfzwischenspeicher=Mittel.tf;
+    
+    static void findDifficulty(FocusEvent e) {
+        for(int x=0; x<19; x++) {
+            for(int y=0; y<20; y++) {
+            if(e.getSource().equals(Einfach.tf[x][y])) tfzwischenspeicher = Einfach.tf;
+            else if(e.getSource().equals(Mittel.tf[x][y])) tfzwischenspeicher = Mittel.tf;
+            else if(e.getSource().equals(Schwer.tf[x][y])) tfzwischenspeicher = Schwer.tf;
+            }}
+    }
+    static void resetColor() {
+        if (spaltezwischenspeicher == -1) {
+            if (vorFarbe.equals(Color.yellow))
+                vorFarbe = Color.white;
+            horizontaleReiheMarker(anfangszwischenspeicher, endezwischenspeicher, vorFarbe, focuszwischenspeicher);
+        } else {
+            vertikaleReiheMarker(anfangszwischenspeicher, spaltezwischenspeicher, endezwischenspeicher, vorFarbe, focuszwischenspeicher);
         }
     }
-	
-	
+
+    static void horizontaleReiheMarker(int anfang, int ende, Color farbe, FocusEvent e) {
+        anfangszwischenspeicher = anfang;
+        endezwischenspeicher = ende;
+        spaltezwischenspeicher = -1;
+        focuszwischenspeicher=e;
+        findDifficulty(e);
+
+        for (; anfang <= ende; anfang++) {
+            if (vorFarbe.equals(tfzwischenspeicher[anfang / 100][anfang % 100 - 1].getBackground())) {
+            } else {
+                vorFarbe = tfzwischenspeicher[anfang / 100][anfang % 100 - 1].getBackground();
+            }
+            tfzwischenspeicher[anfang / 100][anfang % 100 - 1].setBackground(farbe);
+        }
+    }
+
+    static void vertikaleReiheMarker(int anfang, int spalte, int ende, Color farbe, FocusEvent e) {
+        anfangszwischenspeicher = anfang;
+        endezwischenspeicher = ende;
+        spaltezwischenspeicher = spalte;
+        focuszwischenspeicher=e;
+        findDifficulty(e);
+        
+        for (int i = anfang; anfang <= ende; anfang = anfang + 100) {
+            if (vorFarbe.equals(tfzwischenspeicher[anfang / 100][spalte - 1].getBackground())) {
+            } else {
+                vorFarbe = tfzwischenspeicher[anfang / 100][spalte - 1].getBackground();
+            }
+            tfzwischenspeicher[anfang / 100][spalte - 1].setBackground(farbe);
+        }
+    }
 }
 
 
