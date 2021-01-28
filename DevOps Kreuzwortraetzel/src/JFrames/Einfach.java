@@ -24,7 +24,7 @@ public class Einfach extends JFrame {
 	}
 
 
-
+	public static final int einfach = 0;
 	private static JPanel contentPane=new JPanel();
 	private static JButton testButton = new JButton("Testen");
 	public static JTextField[][] tf = new JTextField[21][21];
@@ -52,10 +52,10 @@ public class Einfach extends JFrame {
 
 		System.out.println("Starte auf Mittel");
 
-		new Frameassistent(this, contentPane, textPane, 
+		Frameassistent fae = new Frameassistent(this, contentPane, textPane, 
 				hauptmenu, buttonfont, fragefeld, hintergrund, PunkteLabel, scrollPane, 
 				tf, width, height, testButton, aw, motivationgif);
-		
+		fae.initeinfachtf(tf, width, height, contentPane, fragefeld, testButton, aw);
 		contentPane.add(hauptmenu);
 		contentPane.add(PunkteLabel);
 		contentPane.add(scrollPane);

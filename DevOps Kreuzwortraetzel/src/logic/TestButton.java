@@ -49,7 +49,7 @@ public class TestButton {
 
     testFeld(testField, fragefeld, contentPane, tf, aw, testButton);
     mainButton(testButton, tf, eg, aw, punkteLabel, fragefeld, scrollPane, testField,
-        motivationgraphic, hintergrund, jf, textPane, buttonfont);
+        motivationgraphic, hintergrund, jf, textPane, buttonfont, contentPane);
 
   }
 
@@ -59,7 +59,8 @@ public class TestButton {
 
   void mainButton(JButton testButton, JTextField[][] tf, String[][] eg, String[][] aw,
       JLabel punkteLabel, JTextField fragefeld, JScrollPane scrollPane, JTextField testFeld,
-      JLabel motivationGrafic, JLabel hintergrund, JFrame jf, JTextPane textPane, Font buttonfont) {
+      JLabel motivationGrafic, JLabel hintergrund, JFrame jf, JTextPane textPane, 
+      Font buttonfont, JPanel contentPane) {
     testButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         konsolenzaehler++;
@@ -84,7 +85,7 @@ public class TestButton {
                 String[] yesNoOptions = { "Ja", "Nein", "Abbrechen" };
 
                 int n = JOptionPane.showOptionDialog(null, "GEWONNEN! Endscreen sehen?", // question
-                    "Ja/Nein/Abbrechen", // title
+                    "naechstes Level?", // title
                     JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, // icon
                     null, yesNoOptions, yesNoOptions[0]);
 
@@ -95,9 +96,11 @@ public class TestButton {
                   for (int k = 0; i < 21; i++) {
                     for (int p = 0; j < 20; j++) {
                       tf[k][p].setVisible(false);
+                      
                     }
                   }
-
+                  contentPane.removeAll();
+                  contentPane.repaint();
                   testButton.setVisible(false);
                   fragefeld.setVisible(false);
                   scrollPane.setVisible(false);
@@ -203,7 +206,7 @@ public class TestButton {
             btn.doClick();
             complete = 6;
           }
-          System.out.println("LOL");
+          System.out.println("Triggered " + complete );
         }
       }
 
