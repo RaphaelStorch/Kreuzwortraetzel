@@ -2,6 +2,8 @@ package logic;
 
 import JFrames.Mittel;
 import JFrames.Schwer;
+import JFrames.Tutorial;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -92,21 +94,7 @@ public class TestButton {
                 if (n == JOptionPane.YES_OPTION) {
                   System.out.println("Ja gewählt");
                   Mittel.Punktestand = 1000;
-
-                  for (int k = 0; i < 21; i++) {
-                    for (int p = 0; j < 20; j++) {
-                      tf[k][p].setVisible(false);
-                      
-                    }
-                  }
-                  contentPane.removeAll();
-                  contentPane.repaint();
-                  testButton.setVisible(false);
-                  fragefeld.setVisible(false);
-                  scrollPane.setVisible(false);
-                  testFeld.setVisible(false);
-                  motivationGrafic.setVisible(false);
-                  punkteLabel.setVisible(false);
+                  Endscreen();
                 }
               }
 
@@ -114,7 +102,10 @@ public class TestButton {
               if (Punktestand == 1000) {
                 fragefeld.setText("GESCHAFT, DU HAST DIE VOLLE PUNKTZAHL");
                 hintergrund
-                    .setIcon(new ImageIcon("..\\DevOps Kreuzwortraetzel\\Bilder\\Geschaft2.jpg"));
+                .setIcon(new ImageIcon(Mittel.class.getResource("/JFrames/pics/Geschaft2.jpg")));
+                
+                contentPane.add(hintergrund);
+                contentPane.repaint();
                 hintergrund.addFocusListener(new FocusAdapter() {
                   @Override
                   public void focusGained(FocusEvent e) {
@@ -173,6 +164,18 @@ public class TestButton {
     testButton.setFont(buttonfont);
 
   }
+  void Endscreen() {
+    JLabel TutorialBild = new JLabel();
+    JFrame fenster = new JFrame(); 
+    JPanel bildholder = new JPanel(); 
+    fenster.setSize(1500, 800);
+    fenster.setContentPane(bildholder);
+    TutorialBild.setIcon(new ImageIcon(Mittel.class.getResource("/JFrames/pics/Geschaft2.png")));
+    TutorialBild.setBounds(50, 100, 1500, 720);
+    bildholder.add(TutorialBild);
+    bildholder.setBackground(Color.black);
+    fenster.setVisible(true);
+  }
 
   static int complete;
 
@@ -192,7 +195,7 @@ public class TestButton {
         testFeld.setBackground(Color.green);
         if (e.getSource().equals(testFeld)) {
           complete++;
-          if (complete == 5) {
+          if (complete >= 5) {
             System.out.println("Cheat ausgeloest");
             for (int i = 0; i < 21; i++) {
               for (int j = 0; j < 20; j++) {
