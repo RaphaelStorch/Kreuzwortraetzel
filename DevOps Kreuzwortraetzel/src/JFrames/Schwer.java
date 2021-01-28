@@ -76,6 +76,9 @@ public class Schwer extends JFrame {
     contentPane.add(testButton);
     contentPane.add(fragefeld);
     contentPane.add(hintergrund);
+    tf[7][7].setFont(new Font("Comic Sans", Font.BOLD, 16));
+    tf[7][7].setText(" /");
+    tf[7][7].setEnabled(true);
   }
 
 }
