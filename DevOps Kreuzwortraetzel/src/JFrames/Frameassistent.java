@@ -154,25 +154,24 @@ public class Frameassistent {
           btn.doClick();
         }
         if (e.getKeyChar() == KeyEvent.VK_BACK_SPACE) {
-
           System.out.println("Gerückt");
           for (int i = 0; i < 21; i++) {
             for (int j = 0; j < 20; j++) {
               if (j < 20 && e.getComponent().equals(tf[i][j])) {
-
-                if (!(tf[i][j - 1].getBackground().equals(Color.black))) {
-                  tf[i][j - 1].grabFocus();
+                if (!(tf[i-1][j].getBackground().equals(Color.black))) {
+                  System.out.println("Pressed Backspace");
+                  tf[i-1][j].grabFocus();
                 }
                 tf[i][j].setText(" ");
-                tf[i][j - 1].setText(" ");
+                tf[i-1][j].setText(" ");
               }
               if (i < 20 && e.getComponent().equals(tf[i][j])) {
-
-                if (!(tf[i - 1][j].getBackground().equals(Color.black))) {
-                  tf[i - 1][j].grabFocus();
+                if (!(tf[i][j-1].getBackground().equals(Color.black))) {
+                  System.out.println("Pressed Backspace");
+                  tf[i][j-1].grabFocus();
                 }
                 tf[i][j].setText(" ");
-                tf[i - 1][j].setText(" ");
+                tf[i][j-1].setText(" ");
               }
             }
           }
