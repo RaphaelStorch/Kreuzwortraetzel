@@ -170,7 +170,7 @@ public class TestButton {
     JPanel bildholder = new JPanel(); 
     fenster.setSize(1500, 800);
     fenster.setContentPane(bildholder);
-    TutorialBild.setIcon(new ImageIcon(Mittel.class.getResource("/JFrames/pics/Geschaft2.png")));
+    TutorialBild.setIcon(new ImageIcon(Mittel.class.getResource("/JFrames/pics/GeschaftFinal.png")));
     TutorialBild.setBounds(50, 100, 1500, 720);
     bildholder.add(TutorialBild);
     bildholder.setBackground(Color.black);
