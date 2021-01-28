@@ -176,31 +176,4 @@ public class Database {
 		return csvmatrix;
 		
 	}
-//	Was wird dargestellt: git log --graph --oneline - Baumdiagramm ---
-//	Jemand der an einem Programm arbeitet - Entwickler
-//  Besterdozent Nachname - Kreis 
-//  Besterübungsleiter Vorname- Joern 
-//  schlechte Abkürzung für Methoden und Werkzeuge - MethWerk 
-//  Farbe der Wolken - Weiß 
-//  Tier das in der Vorlesung oft vorkam - Katze 
-//  Was macht man beim Wählen immer? - Kreuze 
-//  Welche Jahreszeit war zur Zeit der Entwicklung? - Winter 
-//  Bekannteste Tonart - Dur 	
-//  was hat der Kunde? - Macht 	
-//  _____ Polo - Marco
-	
-	
-//	String[] lö= new String[10];  
-//	lö[0]="Vim".toUpperCase();
-//	lö[1]="Repository".toUpperCase();
-//	lö[2]="Merge".toUpperCase();
-//	lö[3]="Index".toUpperCase();
-//	lö[4]="mkdir".toUpperCase();
-//	lö[5]="echo".toUpperCase();
-//	lö[6]="Punkt".toUpperCase();
-//	lö[7]="Commit".toUpperCase();
-//	lö[8]="Main".toUpperCase();
-//	lö[9]="checkout".toUpperCase();
-//	
-	
 }

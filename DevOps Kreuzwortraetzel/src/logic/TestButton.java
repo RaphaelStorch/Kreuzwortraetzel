@@ -24,26 +24,26 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
-
 public class TestButton {
-  /**Java Doc für TestButton.
+  /**
+   * Java Doc für TestButton.
    * 
-   * @param testButton -> übergabe des Buttons, soll überprüfen 
-   * @param tf -> übergabe des Hauptrasters für überprüfung
-   * @param eg -> übergabe des eingaberasters 
-   * @param aw -> übergabe des antwortrasters 
-   * @param punkteLabel -> übergabe des sichtbaren Punktestandschriftzugs 
-   * @param fragefeld -> übergabe des Fragefelds 
-   * @param scrollPane -> übergabe der Konsole 
-   * @param testField -> übergabe des Cheatfelds 
+   * @param testButton        -> übergabe des Buttons, soll überprüfen
+   * @param tf                -> übergabe des Hauptrasters für überprüfung
+   * @param eg                -> übergabe des eingaberasters
+   * @param aw                -> übergabe des antwortrasters
+   * @param punkteLabel       -> übergabe des sichtbaren Punktestandschriftzugs
+   * @param fragefeld         -> übergabe des Fragefelds
+   * @param scrollPane        -> übergabe der Konsole
+   * @param testField         -> übergabe des Cheatfelds
    * @param motivationgraphic -> übergabe des MotivationsGIF
-   * @param hintergrund -> übergabe des Hintergrundbildes 
-   * @param jf -> übergabe des kompletten JFrame 
-   * @param textPane -> übergabe des Konsolenfelds 
-   * @param buttonfont -> übergabe des Buttonfonts 
-   * @param contentPane -> Übergabe des Hauptpanes 
+   * @param hintergrund       -> übergabe des Hintergrundbildes
+   * @param jf                -> übergabe des kompletten JFrame
+   * @param textPane          -> übergabe des Konsolenfelds
+   * @param buttonfont        -> übergabe des Buttonfonts
+   * @param contentPane       -> Übergabe des Hauptpanes
    */
-  
+
   public TestButton(JButton testButton, JTextField[][] tf, String[][] eg, String[][] aw,
       JLabel punkteLabel, JTextField fragefeld, JScrollPane scrollPane, JTextField testField,
       JLabel motivationgraphic, JLabel hintergrund, JFrame jf, JTextPane textPane, Font buttonfont,
@@ -56,17 +56,17 @@ public class TestButton {
   }
 
   static String konsole = "";
-  static int Punktestand = 0;
+  static int punktestand = 0;
   static int konsolenzaehler = 0;
 
   void mainButton(JButton testButton, JTextField[][] tf, String[][] eg, String[][] aw,
       JLabel punkteLabel, JTextField fragefeld, JScrollPane scrollPane, JTextField testFeld,
-      JLabel motivationGrafic, JLabel hintergrund, JFrame jf, JTextPane textPane, 
-      Font buttonfont, JPanel contentPane) {
+      JLabel motivationGrafic, JLabel hintergrund, JFrame jf, JTextPane textPane, Font buttonfont,
+      JPanel contentPane) {
     testButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         konsolenzaehler++;
-        Punktestand = 0;
+        punktestand = 0;
         for (int i = 0; i < 21; i++) {
           for (int j = 0; j < 20; j++) {
             eg[i][j] = tf[i][j].getText();
@@ -76,101 +76,55 @@ public class TestButton {
               }
               konsole = konsole + "\n" + i + " " + j + " Richtig,  +1 ";
               tf[i][j].setText("" + eg[i][j]);
-
+              Punktesystem(punkteLabel);
               tf[i][j].setBackground(Color.green);
 
-              Punktestand = Punktestand + 1;
-              punkteLabel.setText("Punktestand: " + Punktestand);
-
-              if (Punktestand == 122) {
-                System.out.println("Volle Punktzahl");
-                String[] yesNoOptions = { "Ja", "Nein", "Abbrechen" };
-
-                int n = JOptionPane.showOptionDialog(null, "GEWONNEN! Endscreen sehen?", // question
-                    "naechstes Level?", // title
-                    JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, // icon
-                    null, yesNoOptions, yesNoOptions[0]);
-
-                if (n == JOptionPane.YES_OPTION) {
-                  System.out.println("Ja gewählt");
-                  Mittel.Punktestand = 1000;
-                  Endscreen();
-                }
-              }
-
-              // //wenn man mal durchgekommen ist
-              if (Punktestand == 1000) {
-                fragefeld.setText("GESCHAFT, DU HAST DIE VOLLE PUNKTZAHL");
-                hintergrund
-                .setIcon(new ImageIcon(Mittel.class.getResource("/JFrames/pics/Geschaft2.jpg")));
-                
-                contentPane.add(hintergrund);
-                contentPane.repaint();
-                hintergrund.addFocusListener(new FocusAdapter() {
-                  @Override
-                  public void focusGained(FocusEvent e) {
-                    System.out.println("Mittel gewonnen");
-                    String[] yesNoOptions = { "Ja", "Nein", "Abbrechen" };
-
-                    int n = JOptionPane.showOptionDialog(null, "Nächstes Level?", // question
-                        "Ja/Nein/Abbrechen", // title
-                        JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, // icon
-                        null, yesNoOptions, yesNoOptions[0]);
-
-                    if (n == JOptionPane.YES_OPTION) {
-                      System.out.println("Ja gewählt");
-                      Schwer.main(null);
-                    }
-                  }
-                });
-
-                hintergrund.addMouseListener(new MouseAdapter() {
-                  @Override
-                  public void mouseClicked(MouseEvent e) {
-                    System.out.println("Mittel gewonnen");
-                    String[] yesNoOptions = { "Ja", "Nein", "Abbrechen" };
-
-                    int n = JOptionPane.showOptionDialog(null, "Nächstes Level?", // question
-                        "Ja/Nein/Abbrechen", // title
-                        JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, // icon
-                        null, yesNoOptions, yesNoOptions[0]);
-
-                    if (n == JOptionPane.YES_OPTION) {
-                      System.out.println("Ja gewählt");
-                      jf.setVisible(false);
-                      Schwer.main(null);
-
-                    }
-                  }
-                });
-
-              }
             } else if (!(eg[i][j].equals(" "))) {
               konsole = konsole + "\n" + i + " " + j + " Falsch,  -1";
-              Punktestand -= 1;
-              punkteLabel.setText("Punktestand: " + Punktestand);
-              // tf[i][j].setText(""+eg[i][j]);
+              punktestand -= 1;
+              punkteLabel.setText("Punktestand: " + punktestand);
               tf[i][j].setBackground(Color.red);
-            } 
+            }
           }
         }
-        textPane.setText(textPane.getText() + konsole + "\nPunktestand: " + Punktestand + "\n");
+        textPane.setText(textPane.getText() + konsole + "\nPunktestand: " + punktestand + "\n");
       }
     });
     testButton.setBounds(668, 625, 100, 35);
-
     testButton.setBackground(Color.black);
     testButton.setForeground(Color.green);
     testButton.setFont(buttonfont);
 
   }
+
+  void Punktesystem(JLabel punkteLabel) {
+    punktestand = punktestand + 1;
+    punkteLabel.setText("Punktestand: " + punktestand);
+
+    if (punktestand == 122) {
+      System.out.println("Volle Punktzahl");
+      String[] yesNoOptions = { "Ja", "Nein", "Abbrechen" };
+
+      int n = JOptionPane.showOptionDialog(null, "GEWONNEN! Endscreen sehen?", // question
+          "naechstes Level?", // title
+          JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, // icon
+          null, yesNoOptions, yesNoOptions[0]);
+
+      if (n == JOptionPane.YES_OPTION) {
+        System.out.println("Ja gewählt");
+        Endscreen();
+      }
+    }
+  }
+
   void Endscreen() {
     JLabel TutorialBild = new JLabel();
-    JFrame fenster = new JFrame(); 
-    JPanel bildholder = new JPanel(); 
+    JFrame fenster = new JFrame();
+    JPanel bildholder = new JPanel();
     fenster.setSize(1500, 800);
     fenster.setContentPane(bildholder);
-    TutorialBild.setIcon(new ImageIcon(Mittel.class.getResource("/JFrames/pics/GeschaftFinal.png")));
+    TutorialBild
+        .setIcon(new ImageIcon(Mittel.class.getResource("/JFrames/pics/GeschaftFinal.png")));
     TutorialBild.setBounds(50, 100, 1500, 720);
     bildholder.add(TutorialBild);
     bildholder.setBackground(Color.black);
@@ -209,7 +163,7 @@ public class TestButton {
             btn.doClick();
             complete = 6;
           }
-          System.out.println("Triggered " + complete );
+          System.out.println("Triggered " + complete);
         }
       }
 
