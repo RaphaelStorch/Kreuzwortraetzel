@@ -1,5 +1,6 @@
 package JFrames;
 
+import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.Window;
 import java.awt.event.ActionEvent;
@@ -15,8 +16,8 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
 
-import Logik.Main;
 import MusicLoader.Musicloader;
+import logic.Main;
 
 //import Logik.StartBildschirm;
 //import Ressources.PicLoader;
@@ -37,7 +38,8 @@ public class Tutorial extends JFrame {
 		
 		setTitle("Tutorial");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 200, 500);
+		setBounds(100, 100, 400, 500);
+		this.setBackground(Color.black);
 		
 		inhaltsbereich.setBorder(new EmptyBorder(5, 5, 5, 5));
 		inhaltsbereich.setLayout(null);
@@ -50,15 +52,15 @@ public class Tutorial extends JFrame {
 		Standarts();
 		
 		Tutorial.einfachButtonListener(einfachButton);
-		einfachButton.setBounds(20,227,156,55);
+		einfachButton.setBounds(20,227,350,55);
 		inhaltsbereich.add(einfachButton);
 		
 		Tutorial.mittelButtonListener(mittelButton);
-		mittelButton.setBounds(20,292,156,55);
+		mittelButton.setBounds(20,292,350,55);
 		inhaltsbereich.add(mittelButton);
 		
 		Tutorial.schwerButtonListener(schwerButton);
-		schwerButton.setBounds(20,357,156,55);
+		schwerButton.setBounds(20,357,350,55);
 		inhaltsbereich.add(schwerButton);
 		TutorialScreenshotButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -67,7 +69,8 @@ public class Tutorial extends JFrame {
 		});
 		
 	//	Tutorial.TutorialScreenshotButtonListener(TutorialScreenshotButton);
-		TutorialScreenshotButton.setBounds(20,20,156,197);
+		TutorialScreenshotButton.setBounds(20,20,350,200);
+		TutorialScreenshotButton.setIcon(new ImageIcon(Tutorial.class.getResource("/JFrames/pics/tutorialicon.png")));
 		inhaltsbereich.add(TutorialScreenshotButton);
 		
 		
