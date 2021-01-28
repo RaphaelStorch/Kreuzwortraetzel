@@ -5,8 +5,20 @@
 - Gruppenname: Team Star
 - Developer: Mark-Viktor Voth, Raphael Storch, Gufran Oezmert
 - Thema: Kreuzwort
+## Meeting 25.01 bis 28.01
+- Linter Probleme geloest
+- Schwierigkeit Einfach und Schwer hinzugefuegt
+- Schwierigkeit Mittel Markierungen himzugefuegt
+- Weitere Bugs ausgemerzt
+## Meeting 21.01.2021
+- Redezeit + Einteilung
+- Commits neu machen
+- Gitignore neu erstellen
+## Meeting 12.01.2021
+- Aufgaben von letzter Woche fertiggestellt und zusammengestellt
+- Praesentation besprochen und gestaltet
 ## Meeting 6.01.2021
-- Neujahrs Review
+- Neujahrs Retrospective
 - Weitere Aufgaben Verteilung
 - Gufran: Product Backlog
 - Gufran: User Stories
