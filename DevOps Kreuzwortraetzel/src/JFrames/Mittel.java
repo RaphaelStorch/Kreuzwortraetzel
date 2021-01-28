@@ -53,7 +53,7 @@ public class Mittel extends JFrame {
     Frameassistent fam = new Frameassistent(this, contentPane, textPane, hauptmenu, buttonfont,
         fragefeld, hintergrund, PunkteLabel, scrollPane, tf, width, height, testButton, aw,
         motivationgif);
-    fam.initmitteltf(tf, width, height, contentPane, fragefeld, testButton, aw);
+    fam.inittf(tf, width, height, contentPane, fragefeld, testButton, aw);
     fam.initJFrameStandards(this, contentPane);
     fam.initKonsole(textPane);
     fam.inithauptMenuButton(hauptmenu, this, buttonfont);
@@ -62,11 +62,13 @@ public class Mittel extends JFrame {
     fam.initPunkteLabel(PunkteLabel);
     fam.initScrollPane(scrollPane);
     fam.initMotivationGIF(motivationgif);
+    fam.setmittelFocusListener(aw, tf);
     contentPane.add(hauptmenu);
     contentPane.add(PunkteLabel);
     contentPane.add(scrollPane);
     contentPane.add(textField_2);
     contentPane.add(motivationgif);
+    
 
     new TestButton(testButton, tf, eg, aw, PunkteLabel, fragefeld, scrollPane, textField_2,
         motivationgif, hintergrund, this, textPane, buttonfont, contentPane);

@@ -54,7 +54,7 @@ public class Schwer extends JFrame {
     Frameassistent fas = new Frameassistent(this, contentPane, textPane, hauptmenu, buttonfont,
         fragefeld, hintergrund, PunkteLabel, scrollPane, tf, width, height, testButton, aw,
         motivationgif);
-    fas.initschwertf(tf, width, height, contentPane, fragefeld, testButton, aw);
+    fas.inittf(tf, width, height, contentPane, fragefeld, testButton, aw);
     fas.initJFrameStandards(this, contentPane);
     fas.initKonsole(textPane);
     fas.inithauptMenuButton(hauptmenu, this, buttonfont);
@@ -63,7 +63,7 @@ public class Schwer extends JFrame {
     fas.initPunkteLabel(PunkteLabel);
     fas.initScrollPane(scrollPane);
     fas.initMotivationGIF(motivationgif);
-
+    fas.setschwerFocusListener(aw, tf);
     contentPane.add(hauptmenu);
     contentPane.add(PunkteLabel);
     contentPane.add(scrollPane);
@@ -76,6 +76,9 @@ public class Schwer extends JFrame {
     contentPane.add(testButton);
     contentPane.add(fragefeld);
     contentPane.add(hintergrund);
+    tf[7][7].setFont(new Font("Comic Sans", Font.BOLD, 16));
+    tf[7][7].setText(" /");
+    tf[7][7].setEnabled(true);
   }
 
 }

@@ -53,7 +53,7 @@ public class Einfach extends JFrame {
     Frameassistent fae = new Frameassistent(this, contentPane, textPane, hauptmenu, buttonfont,
         fragefeld, hintergrund, PunkteLabel, scrollPane, tf, width, height, testButton, aw,
         motivationgif);
-    fae.initeinfachtf(tf, width, height, contentPane, fragefeld, testButton, aw);
+    fae.inittf(tf, width, height, contentPane, fragefeld, testButton, aw);
     fae.initJFrameStandards(this, contentPane);
     fae.initKonsole(textPane);
     fae.inithauptMenuButton(hauptmenu, this, buttonfont);
@@ -62,7 +62,7 @@ public class Einfach extends JFrame {
     fae.initPunkteLabel(PunkteLabel);
     fae.initScrollPane(scrollPane);
     fae.initMotivationGIF(motivationgif);
-
+    fae.seteinfachFocusListener(aw, tf);
     contentPane.add(hauptmenu);
     contentPane.add(PunkteLabel);
     contentPane.add(scrollPane);
@@ -75,6 +75,5 @@ public class Einfach extends JFrame {
     contentPane.add(testButton);
     contentPane.add(fragefeld);
     contentPane.add(hintergrund);
-    this.repaint();
   }
 }

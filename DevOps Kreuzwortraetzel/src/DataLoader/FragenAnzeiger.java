@@ -4,15 +4,11 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-
-import javax.swing.JPanel;
 import javax.swing.JTextField;
-
 import JFrames.Einfach;
 import JFrames.Mittel;
 import JFrames.Schwer;
@@ -27,7 +23,6 @@ public class FragenAnzeiger {
   public static String[][] getCSVFragen() {
 
     int counter = 0;
-    int zeile = 0;
     try {
       BufferedReader br = new BufferedReader(new FileReader(path));
       while ((line = br.readLine()) != null) {
@@ -52,10 +47,6 @@ public class FragenAnzeiger {
   public static FocusAdapter fragenMittel(int o) {
     System.out.println("Reached");
     FocusAdapter[] fa = new FocusAdapter[21];
-    int derzeit = o;
-    int anfang = 0;
-    int ende = 0;
-    int frage = 1;
     final String F1 = fragen[1][0];
     final String F2 = fragen[2][0];
     final String F3 = fragen[3][0];
@@ -76,9 +67,6 @@ public class FragenAnzeiger {
     final String F18 = fragen[18][0];
     final String F19 = fragen[19][0];
     final String F20 = fragen[20][0];
-    final String F21 = fragen[21][0];
-
-    JTextField[][] tfcopy = Mittel.tf;
 
     // Verschmelzung von zwei Dateien,"Merge" (o>=3&&o<=9)
     if (o == 7 || o == 100 + 7 || o == 200 + 7 || o == 300 + 7 || o == 400 + 7) {
@@ -447,7 +435,6 @@ public class FragenAnzeiger {
 
     line = "";
     int counter = 0;
-    int zeile = 0;
     try {
       BufferedReader br = new BufferedReader(new FileReader(Schwerpath));
       while ((line = br.readLine()) != null) {
@@ -472,10 +459,6 @@ public class FragenAnzeiger {
   public static FocusAdapter fragenSchwer(int o) {
     System.out.println("Reached");
     FocusAdapter[] fa = new FocusAdapter[21];
-    int derzeit = o;
-    int anfang = 0;
-    int ende = 0;
-    int frage = 1;
     final String F1 = Schwerfragen[1][0];
     final String F2 = Schwerfragen[2][0];
     final String F3 = Schwerfragen[3][0];
@@ -845,7 +828,6 @@ public class FragenAnzeiger {
   public static String[][] geteinfachCSVFragen() {
 
     int counter = 0;
-    int zeile = 0;
     try {
       BufferedReader br = new BufferedReader(new FileReader(einfachpath));
       while ((einfachline = br.readLine()) != null) {
@@ -869,11 +851,7 @@ public class FragenAnzeiger {
 
   public static FocusAdapter fragenEinfach(int o) {
     System.out.println("Reached");
-    FocusAdapter[] fa= new FocusAdapter[21];
-    int derzeit = o;
-    int anfang = 0;
-    int ende = 0;
-    int frage = 1;
+    FocusAdapter[] fa = new FocusAdapter[21];
     final String F1 = einfachfragen[1][0];
     final String F2 = einfachfragen[2][0];
     final String F3 = einfachfragen[3][0];
@@ -893,8 +871,6 @@ public class FragenAnzeiger {
     final String F17 = einfachfragen[17][0];
     final String F18 = einfachfragen[18][0];
     final String F19 = einfachfragen[19][0];
-    final String F20 = einfachfragen[20][0];
-    final String F21 = einfachfragen[21][0];
 
     // Wie heisst das Team dass das Spiel erstellt hat?,"Star" (>=3&&<=9)
     if (o == 1600 + 9 || o == 1700 + 9 || o == 1800 + 9 || o == 1900 + 9) {
@@ -1263,24 +1239,24 @@ public class FragenAnzeiger {
       }
     }
   }
-  
+
   static int findtf(FocusEvent e) {
     for (int x = 0; x <= 19; x++) {
       for (int y = 0; y < 20; y++) {
         if (e.getSource().equals(Einfach.tf[x][y])) {
           System.out.println("Einfach found");
           tfzwischenspeicher = Einfach.tf;
-          return x*100+y-1;
+          return x * 100 + y - 1;
         }
         if (e.getSource().equals(Mittel.tf[x][y])) {
           System.out.println("Mittel found");
           tfzwischenspeicher = Mittel.tf;
-          return x*100+y-1;
+          return x * 100 + y - 1;
         }
         if (e.getSource().equals(Schwer.tf[x][y])) {
           System.out.println("Schwer found");
           tfzwischenspeicher = Schwer.tf;
-          return x*100+y-1;
+          return x * 100 + y - 1;
         }
       }
     }
@@ -1299,65 +1275,55 @@ public class FragenAnzeiger {
     }
   }
 
-  static int zwa = 0; 
-  static int zwb = 0; 
+  static int zwa = 0;
+  static int zwb = 0;
   static JTextField anfangseventholder = new JTextField();
-  static FocusEvent zwe = new FocusEvent(anfangseventholder, anfangszwischenspeicher);
   static int[] d = new int[20];
-  static int countingstar=0;
+  static int countingstar = 0;
   static Component comp;
-  
+
   static void horizontaleReiheMarker(int anfang, int ende, Color farbe, FocusEvent e) {
-    if(farbe.equals(Color.yellow)) {if(e.getComponent().getBackground().equals(Color.yellow)) {return;}}
     anfangszwischenspeicher = anfang;
     endezwischenspeicher = ende;
-    System.out.println("Durchgang" + anfang +"          " + ende);
     spaltezwischenspeicher = -1;
-    focuszwischenspeicher = e;
     findDifficulty(e);
-    
-    
-    
+
     for (; anfang <= ende; anfang++) {
-//            if (vorFarbe.equals(tfzwischenspeicher[anfang / 100][anfang % 100 - 1].getBackground())) {
-//            } else {
-//                vorFarbe = tfzwischenspeicher[anfang / 100][anfang % 100 - 1].getBackground();
-//            }
-      
-        tfzwischenspeicher[anfang / 100][(anfang % 100) - 1].setBackground(farbe);
-        System.out.println(anfang / 100 + "              +" + ((anfang % 100) - 1));
+      if (vorFarbe.equals(tfzwischenspeicher[anfang / 100][anfang % 100 - 1].getBackground())) {
+      } else {
+        vorFarbe = tfzwischenspeicher[anfang / 100][anfang % 100 - 1].getBackground();
       }
-    
-    System.out.println("\n\n\n");
+
+      tfzwischenspeicher[anfang / 100][(anfang % 100) - 1].setBackground(farbe);
+    }
   }
-  
-  
-  
+
   static void vertikaleReiheMarker(int anfang, int spalte, int ende, Color farbe, FocusEvent e) {
-    if(farbe.equals(Color.yellow)) { if(e.getComponent().getBackground().equals(Color.yellow)) {return;}}
     anfangszwischenspeicher = anfang;
-    if(zwa==anfang || zwb == anfang)return; 
-    if(zwb==ende || zwa == ende)return;
-    if(zwe.getComponent().equals(comp))return;
-    zwe = e;
-    
-    countingstar=0;
+    if (zwa == anfang || zwb == anfang)
+      return;
+    if (zwb == ende || zwa == ende)
+      return;
+
+    countingstar = 0;
     anfangszwischenspeicher = anfang;
     endezwischenspeicher = ende;
     spaltezwischenspeicher = spalte;
     focuszwischenspeicher = e;
     final int spaltenzw = spalte - 1;
     findDifficulty(e);
-    System.out.println("Durchgang" + anfang +"          " + spalte+ "      "+ ende);
-    for (int i = anfang; anfang <= ende; anfang = anfang + 100) {
-      if(findtf(e)==(anfang / 100)*spalte - 1) {return;}
-      if(findtf(e)==anfang/100) {return;}
-//            if (vorFarbe.equals(tfzwischenspeicher[anfang / 100][spalte - 1].getBackground())) {
-//            } else {
-//                vorFarbe = tfzwischenspeicher[anfang / 100][spalte - 1].getBackground();
-//            }
+    for (; anfang <= ende; anfang = anfang + 100) {
+      if (findtf(e) == (anfang / 100) * spalte - 1) {
+        return;
+      }
+      if (findtf(e) == anfang / 100) {
+        return;
+      }
+      if (vorFarbe.equals(tfzwischenspeicher[anfang / 100][spalte - 1].getBackground())) {
+      } else {
+        vorFarbe = tfzwischenspeicher[anfang / 100][spalte - 1].getBackground();
+      }
       tfzwischenspeicher[anfang / 100][spaltenzw].setBackground(farbe);
-      System.out.println("painted " + anfang / 100 + "     " + (spalte - 1) + "\n");
     }
   }
 }

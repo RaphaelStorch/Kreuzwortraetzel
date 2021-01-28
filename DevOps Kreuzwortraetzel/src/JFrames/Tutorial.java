@@ -19,36 +19,30 @@ import javax.swing.border.EmptyBorder;
 import MusicLoader.Musicloader;
 import logic.Main;
 
-//import Logik.StartBildschirm;
-//import Ressources.PicLoader;
-//import Ressources.SoundLoader;
-
 public class Tutorial extends JFrame {
 	private static JButton einfachButton = new JButton("Einfach");
 	private static JButton mittelButton = new JButton("Mittel");
 	private static JButton schwerButton = new JButton("Schwer");
 	private static JButton TutorialScreenshotButton = new JButton("Tutorial Screenshot");
-	private static JLabel[] spielanleitung= new JLabel[10]; 
-	private static JLabel hintergrund = new JLabel("Hintergrundbild"); 
+	private static JLabel[] spielanleitung = new JLabel[10];
+	private static JLabel hintergrund = new JLabel("Hintergrundbild");
 	private JPanel inhaltsbereich = new JPanel();
 	 private Musicloader music = new Musicloader();
 
-	
-	void Standarts(){
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Tutorial.class.getResource("/JFrames/pics/Team STar Mario (1).png")));
-		
+	void Standarts() {
+		setIconImage(Toolkit.getDefaultToolkit()
+				.getImage(Tutorial.class.getResource("/JFrames/pics/Team STar Mario (1).png")));
+
 		setTitle("Tutorial");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 400, 500);
 		this.setBackground(Color.black);
-		
+
 		inhaltsbereich.setBorder(new EmptyBorder(5, 5, 5, 5));
 		inhaltsbereich.setLayout(null);
 		setContentPane(inhaltsbereich);
 	}
-	
-	
-	
+
 	public Tutorial() {
 		Standarts();
 		music.load();
@@ -62,29 +56,23 @@ public class Tutorial extends JFrame {
 		
 		Tutorial.schwerButtonListener(schwerButton, music);
 		schwerButton.setBounds(20,357,350,55);
+
 		inhaltsbereich.add(schwerButton);
 		TutorialScreenshotButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TutorialPicture();
 			}
 		});
-		
-	//	Tutorial.TutorialScreenshotButtonListener(TutorialScreenshotButton);
-		TutorialScreenshotButton.setBounds(20,20,350,200);
+		TutorialScreenshotButton.setBounds(20, 20, 350, 200);
 		TutorialScreenshotButton.setIcon(new ImageIcon(Tutorial.class.getResource("/JFrames/pics/tutorialicon.png")));
 		inhaltsbereich.add(TutorialScreenshotButton);
-		
-		
-		
-		//hintergrund.setIcon(new ImageIcon(Tutorial.class.getResource("/JFrames/pics/iconResized.jpg")));
-		//hintergrund.setBounds(0, 0, 1276, 713);
-		//inhaltsbereich.add(hintergrund);
-		
+
 	}
+
 	void TutorialPicture() {
 		JLabel TutorialBild = new JLabel();
-		JFrame fenster = new JFrame(); 
-		JPanel bildholder = new JPanel(); 
+		JFrame fenster = new JFrame();
+		JPanel bildholder = new JPanel();
 		fenster.setSize(1500, 800);
 		fenster.setContentPane(bildholder);
 		TutorialBild.setIcon(new ImageIcon(Tutorial.class.getResource("/JFrames/pics/Tutorial Bild Skaliert.jpg")));
@@ -101,7 +89,7 @@ public class Tutorial extends JFrame {
 				}
 				Einfach frame = new Einfach();
 				frame.setVisible(true);
-				
+
 			}
 		});
 	}
@@ -113,7 +101,7 @@ public class Tutorial extends JFrame {
         }
 				Mittel frame = new Mittel();
 				frame.setVisible(true);
-				
+
 			}
 		});
 	}
