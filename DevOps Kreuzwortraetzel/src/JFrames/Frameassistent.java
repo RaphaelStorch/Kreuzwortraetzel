@@ -41,30 +41,11 @@ import logic.Main;
 import logic.TestButton;
 
 public class Frameassistent {
-  public static void font() {
-    // Font defaultfont = new Font ("Comic Sans", Font.PLAIN, 29);
-    // UIDefaults defaults = UIManager.getLookAndFeelDefaults();
-    // defaults.put("Button.font", defaultfont);
-    // defaults.put("TextField.font", defaultfont);
-    // defaults.put("Label.font", defaultfont);
-  }
-
   public Frameassistent(JFrame jf, JPanel contentPane, JTextPane textPane, JButton hauptmenu,
       Font buttonfont, JTextField fragefeld, JLabel hintergrundBild, JLabel PunkteLabel,
       JScrollPane scrollPane, JTextField[][] tf, int width, int height, JButton testButton,
       String[][] aw, JLabel motivationgif) {
 
-    initJFrameStandards(jf, contentPane);
-    initKonsole(textPane);
-    inithauptMenuButton(hauptmenu, jf, buttonfont);
-    initFrageFeld(fragefeld);
-    initHintergrundBild(hintergrundBild);
-    initPunkteLabel(PunkteLabel);
-    initScrollPane(scrollPane);
-//  initeinfachtf(tf, width, height, contentPane, fragefeld, testButton, aw);
-//   initmitteltf(tf, width, height, contentPane, fragefeld, testButton, aw);
-//   initschwertf(tf, width, height, contentPane, fragefeld, testButton, aw);
-    initMotivationGIF(motivationgif);
   }
 
   public void initJFrameStandards(JFrame jf, JPanel contentPane) {
@@ -124,16 +105,67 @@ public class Frameassistent {
     tf[i][j].addKeyListener(new KeyAdapter() {
       @Override
       public void keyReleased(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+          System.out.println("LEFT");
+          for (int i = 0; i < 21; i++) {
+            for (int j = 0; j < 20; j++) {
+              if (j < 20 && e.getComponent().equals(tf[i][j])) {
+                if (!(tf[i][j - 1].getBackground().equals(Color.black))) {
+                  tf[i][j - 1].grabFocus();
+                }
+              }
+            }
+          }
+        }
+        if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+          System.out.println("RIGHT");
+          for (int i = 0; i < 21; i++) {
+            for (int j = 0; j < 20; j++) {
+              if (j < 20 && e.getComponent().equals(tf[i][j])) {
+                if (!(tf[i][j + 1].getBackground().equals(Color.black))) {
+                  tf[i][j + 1].grabFocus();
+                }
+              }
+            }
+          }
+        }
+        if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+          System.out.println("DOWN");
+          for (int i = 0; i < 21; i++) {
+            for (int j = 0; j < 20; j++) {
+              if (j < 20 && e.getComponent().equals(tf[i][j])) {
+                if (!(tf[i + 1][j].getBackground().equals(Color.black))) {
+                  tf[i + 1][j].grabFocus();
+                }
+              }
+            }
+          }
+        }
+        if (e.getKeyCode() == KeyEvent.VK_UP) {
+          System.out.println("UP");
+          for (int i = 0; i < 21; i++) {
+            for (int j = 0; j < 20; j++) {
+              if (j < 20 && e.getComponent().equals(tf[i][j])) {
+                if (!(tf[i - 1][j].getBackground().equals(Color.black))) {
+                  tf[i - 1][j].grabFocus();
+                }
+              }
+            }
+          }
+        }
+
         for (char k = 65; k <= 122; k++) {
           String typed = "" + e.getKeyChar();
           if (typed.equals("" + k)) {
             inittfformat(e.getSource(), typed, tf);
           }
         }
+
         if (e.getKeyChar() == KeyEvent.VK_ENTER) {
           btn.doClick();
         }
         if (e.getKeyChar() == KeyEvent.VK_BACK_SPACE) {
+
           System.out.println("Gerückt");
           for (int i = 0; i < 21; i++) {
             for (int j = 0; j < 20; j++) {
@@ -145,10 +177,18 @@ public class Frameassistent {
                 tf[i][j].setText(" ");
                 tf[i][j - 1].setText(" ");
               }
+              if (i < 20 && e.getComponent().equals(tf[i][j])) {
+
+                if (!(tf[i - 1][j].getBackground().equals(Color.black))) {
+                  tf[i - 1][j].grabFocus();
+                }
+                tf[i][j].setText(" ");
+                tf[i - 1][j].setText(" ");
+              }
             }
           }
-        }
 
+        }
         System.out.println(e.getKeyChar());
 
       }
@@ -178,10 +218,17 @@ public class Frameassistent {
           tf[i][j].setText(" " + s.substring(0, 1).toUpperCase());
           tf[i][j].setFont(f);
           tf[i][j].setForeground(Color.BLACK);
+          if (i < 20) {
+            if (!(tf[i + 1][j].getBackground().equals(Color.black))
+                || !(tf[i][j + 1].getText().equals(" "))) {
+              tf[i + 1][j].grabFocus();
+            }
+          }
           if (j < 20) {
             if (!(tf[i][j + 1].getBackground().equals(Color.black))) {
               tf[i][j + 1].grabFocus();
             }
+
           }
 
         }
@@ -220,8 +267,8 @@ public class Frameassistent {
     scrollPane.setBounds(668, 30, 154, 272);
   }
 
-  void initeinfachtf(JTextField[][] tf, int width, int height, JPanel contentPane, JTextField fragefeld,
-      JButton testButton, String[][] aw) {
+  void initeinfachtf(JTextField[][] tf, int width, int height, JPanel contentPane,
+      JTextField fragefeld, JButton testButton, String[][] aw) {
     for (int i = 0; i < 21; i++) {
       for (int j = 0; j < 20; j++) {
         Font f = new Font("Comic Sans", Font.BOLD, 16);
@@ -236,7 +283,7 @@ public class Frameassistent {
           tf[i][j].setBackground(Color.black);
           tf[i][j].setEditable(false);
           tf[i][j].setBorder(null);
-          // contentPane.remove(tf[i][j]);
+          contentPane.remove(tf[i][j]);
           tf[i][j].setBackground(Color.white);
         }
         tf[i][j].setColumns(10);
@@ -248,8 +295,9 @@ public class Frameassistent {
       }
     }
   }
-  void initmitteltf(JTextField[][] tf, int width, int height, JPanel contentPane, JTextField fragefeld,
-      JButton testButton, String[][] aw) {
+
+  void initmitteltf(JTextField[][] tf, int width, int height, JPanel contentPane,
+      JTextField fragefeld, JButton testButton, String[][] aw) {
     for (int i = 0; i < 21; i++) {
       for (int j = 0; j < 20; j++) {
         Font f = new Font("Comic Sans", Font.BOLD, 16);
@@ -264,7 +312,7 @@ public class Frameassistent {
           tf[i][j].setBackground(Color.black);
           tf[i][j].setEditable(false);
           tf[i][j].setBorder(null);
-          // contentPane.remove(tf[i][j]);
+          contentPane.remove(tf[i][j]);
           tf[i][j].setBackground(Color.white);
         }
         tf[i][j].setColumns(10);
@@ -275,8 +323,9 @@ public class Frameassistent {
       }
     }
   }
-  void initschwertf(JTextField[][] tf, int width, int height, JPanel contentPane, JTextField fragefeld,
-      JButton testButton, String[][] aw) {
+
+  void initschwertf(JTextField[][] tf, int width, int height, JPanel contentPane,
+      JTextField fragefeld, JButton testButton, String[][] aw) {
     for (int i = 0; i < 21; i++) {
       for (int j = 0; j < 20; j++) {
         Font f = new Font("Comic Sans", Font.BOLD, 16);
@@ -291,7 +340,7 @@ public class Frameassistent {
           tf[i][j].setBackground(Color.black);
           tf[i][j].setEditable(false);
           tf[i][j].setBorder(null);
-          // contentPane.remove(tf[i][j]);
+          contentPane.remove(tf[i][j]);
           tf[i][j].setBackground(Color.white);
         }
         tf[i][j].setColumns(10);
