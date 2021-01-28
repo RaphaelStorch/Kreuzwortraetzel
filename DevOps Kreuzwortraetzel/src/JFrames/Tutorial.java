@@ -31,6 +31,7 @@ public class Tutorial extends JFrame {
 	private static JLabel[] spielanleitung= new JLabel[10]; 
 	private static JLabel hintergrund = new JLabel("Hintergrundbild"); 
 	private JPanel inhaltsbereich = new JPanel();
+	 private Musicloader music = new Musicloader();
 
 	
 	void Standarts(){
@@ -50,16 +51,16 @@ public class Tutorial extends JFrame {
 	
 	public Tutorial() {
 		Standarts();
-		
-		Tutorial.einfachButtonListener(einfachButton);
+		music.load();
+		Tutorial.einfachButtonListener(einfachButton, music);
 		einfachButton.setBounds(20,227,350,55);
 		inhaltsbereich.add(einfachButton);
 		
-		Tutorial.mittelButtonListener(mittelButton);
+		Tutorial.mittelButtonListener(mittelButton, music);
 		mittelButton.setBounds(20,292,350,55);
 		inhaltsbereich.add(mittelButton);
 		
-		Tutorial.schwerButtonListener(schwerButton);
+		Tutorial.schwerButtonListener(schwerButton, music);
 		schwerButton.setBounds(20,357,350,55);
 		inhaltsbereich.add(schwerButton);
 		TutorialScreenshotButton.addActionListener(new ActionListener() {
@@ -92,12 +93,11 @@ public class Tutorial extends JFrame {
 		fenster.setVisible(true);
 	}
 	
-	public static void einfachButtonListener(JButton einfachButton) {
+	public static void einfachButtonListener(JButton einfachButton, Musicloader music) {
 		einfachButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(e.getSource() == einfachButton){ //sound
-					Musicloader.play(Musicloader.sound);
-
+				if(e.getSource() == einfachButton){
+			    Musicloader.play(Musicloader.sound);
 				}
 				Einfach frame = new Einfach();
 				frame.setVisible(true);
@@ -105,18 +105,24 @@ public class Tutorial extends JFrame {
 			}
 		});
 	}
-	public static void mittelButtonListener(JButton mittelButton) {
+	public static void mittelButtonListener(JButton mittelButton, Musicloader music) {
 		mittelButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+			  if(e.getSource() == mittelButton){
+          Musicloader.play(Musicloader.sound);
+        }
 				Mittel frame = new Mittel();
 				frame.setVisible(true);
 				
 			}
 		});
 	}
-	public static void schwerButtonListener(JButton schwerButton) {
+	public static void schwerButtonListener(JButton schwerButton, Musicloader music) {
 		schwerButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+			  if(e.getSource() == schwerButton){
+          Musicloader.play(Musicloader.sound);
+        }
 				Schwer frame = new Schwer();
 				frame.setVisible(true);
 				Main.updater.setVisible(false);
