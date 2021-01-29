@@ -42,6 +42,7 @@ public class Mittel extends JFrame {
       JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
   static JLabel hintergrund = new JLabel("Hintergrund");
   static JButton hauptmenu = new JButton("Hauptmenu");
+  int punktemax = 122;
 
   /**
    * Create the frame.
@@ -71,7 +72,7 @@ public class Mittel extends JFrame {
     
 
     new TestButton(testButton, tf, eg, aw, PunkteLabel, fragefeld, scrollPane, textField_2,
-        motivationgif, hintergrund, this, textPane, buttonfont, contentPane);
+        motivationgif, hintergrund, this, textPane, buttonfont, contentPane, punktemax);
 
     contentPane.add(testButton);
     contentPane.add(fragefeld);

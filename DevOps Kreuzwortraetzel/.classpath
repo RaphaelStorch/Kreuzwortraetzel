@@ -5,7 +5,9 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry excluding="DataLoader/Data/" kind="src" path="src"/>
-	<classpathentry excluding="database/|sounds/" kind="src" path="res"/>
+	<classpathentry excluding="DataLoader/Data/|database/|database/" kind="src" path="src"/>
+	<classpathentry kind="src" path="src/database"/>
+	<classpathentry kind="src" path="res/sounds"/>
+	<classpathentry excluding="database/|sounds/|database/|sounds/" kind="src" path="res"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

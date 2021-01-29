@@ -41,7 +41,7 @@ public class Schwer extends JFrame {
       JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
   static JLabel hintergrund = new JLabel("Hintergrund");
   static JButton hauptmenu = new JButton("Hauptmenu");
-
+  int punktemax = 90;
   /**
    * Create the frame.
    */
@@ -71,7 +71,7 @@ public class Schwer extends JFrame {
     contentPane.add(motivationgif);
 
     TestButton tb = new TestButton(testButton, tf, eg, aw, PunkteLabel, fragefeld, scrollPane,
-        textField_2, motivationgif, hintergrund, this, textPane, buttonfont, contentPane);
+        textField_2, motivationgif, hintergrund, this, textPane, buttonfont, contentPane, punktemax);
 
     contentPane.add(testButton);
     contentPane.add(fragefeld);
