@@ -42,16 +42,17 @@ public class TestButton {
    * @param textPane          -> übergabe des Konsolenfelds
    * @param buttonfont        -> übergabe des Buttonfonts
    * @param contentPane       -> Übergabe des Hauptpanes
+   * @param punktemax         -> Übergabe der Höchstpunktezahl
    */
 
   public TestButton(JButton testButton, JTextField[][] tf, String[][] eg, String[][] aw,
       JLabel punkteLabel, JTextField fragefeld, JScrollPane scrollPane, JTextField testField,
       JLabel motivationgraphic, JLabel hintergrund, JFrame jf, JTextPane textPane, Font buttonfont,
-      JPanel contentPane) {
+      JPanel contentPane, int punktemax) {
 
     testFeld(testField, fragefeld, contentPane, tf, aw, testButton);
     mainButton(testButton, tf, eg, aw, punkteLabel, fragefeld, scrollPane, testField,
-        motivationgraphic, hintergrund, jf, textPane, buttonfont, contentPane);
+        motivationgraphic, hintergrund, jf, textPane, buttonfont, contentPane, punktemax);
 
   }
 
@@ -62,7 +63,7 @@ public class TestButton {
   void mainButton(JButton testButton, JTextField[][] tf, String[][] eg, String[][] aw,
       JLabel punkteLabel, JTextField fragefeld, JScrollPane scrollPane, JTextField testFeld,
       JLabel motivationGrafic, JLabel hintergrund, JFrame jf, JTextPane textPane, Font buttonfont,
-      JPanel contentPane) {
+      JPanel contentPane, int punkteMax) {
     testButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         konsolenzaehler++;
@@ -76,8 +77,9 @@ public class TestButton {
               }
               konsole = konsole + "\n" + i + " " + j + " Richtig,  +1 ";
               tf[i][j].setText("" + eg[i][j]);
-              Punktesystem(punkteLabel);
+              punkteSystem(punkteLabel, punkteMax);
               tf[i][j].setBackground(Color.green);
+              
 
             } else if (!(eg[i][j].equals(" "))) {
               konsole = konsole + "\n" + i + " " + j + " Falsch,  -1";
@@ -97,16 +99,16 @@ public class TestButton {
 
   }
 
-  void Punktesystem(JLabel punkteLabel) {
+  void punkteSystem(JLabel punkteLabel, int punkteMax) {
     punktestand = punktestand + 1;
     punkteLabel.setText("Punktestand: " + punktestand);
 
-    if (punktestand == 122) {
+    if (punktestand == punkteMax) {
       System.out.println("Volle Punktzahl");
       String[] yesNoOptions = { "Ja", "Nein", "Abbrechen" };
 
       int n = JOptionPane.showOptionDialog(null, "GEWONNEN! Endscreen sehen?", // question
-          "naechstes Level?", // title
+          "Volle Punktezahl!", // title
           JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, // icon
           null, yesNoOptions, yesNoOptions[0]);
 

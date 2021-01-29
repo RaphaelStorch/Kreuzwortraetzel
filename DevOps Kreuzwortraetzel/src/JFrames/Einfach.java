@@ -42,6 +42,7 @@ public class Einfach extends JFrame {
       JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
   static JLabel hintergrund = new JLabel("Hintergrund");
   static JButton hauptmenu = new JButton("Hauptmenu");
+  int punktemax = 91;
 
   /**
    * Create the frame.
@@ -70,7 +71,7 @@ public class Einfach extends JFrame {
     contentPane.add(motivationgif);
 
     new TestButton(testButton, tf, eg, aw, PunkteLabel, fragefeld, scrollPane, textField_2,
-        motivationgif, hintergrund, this, textPane, buttonfont, contentPane);
+        motivationgif, hintergrund, this, textPane, buttonfont, contentPane, punktemax);
 
     contentPane.add(testButton);
     contentPane.add(fragefeld);
